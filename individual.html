@@ -132,12 +132,13 @@ let pid=ORDER[0], full=false;
 function initials(n){const p=n.replace(/[().]/g,'').trim().split(' ');return (p[0][0]||'')+(p[1]?p[1][0]:'');}
 function compassCard(p){const enPct=p.ec==='r'?100:p.ec==='d'?66:33;const enCol=p.ec==='r'?'#0D3B34':p.ec==='d'?'#C6A052':'#A7B49A';const groupsCov=new Set(p.skills.map(s=>s[2])).size;
  return '<div class="card compass"><div class="cwrap"><canvas id="cCompass"></canvas></div>'
-  +'<div class="cmeta"><div class="secH">My Competency Compass</div><div class="secSub">รูปทรงจุดแข็งจากจำนวนหลักฐานจริง · ครอบคลุม '+groupsCov+'/6 กลุ่มทักษะ — ไม่ใช่คะแนนประเมิน</div>'
+  +'<div class="cmeta"><div class="secH">My Competency Compass</div><div class="secSub">จำนวนหลักฐานในแต่ละกลุ่มทักษะ · ครอบคลุม '+groupsCov+'/6 กลุ่ม — กลุ่มที่เป็น 0 เป็นเรื่องปกติตามบทบาท ไม่ใช่จุดอ่อน</div>'
   +'<div class="enring"><div class="cring" style="background:conic-gradient('+enCol+' '+enPct+'%, #ece5d6 0)"><div class="inner" style="color:'+enCol+'">'+RDLBL[p.ec]+'</div></div>'
     +'<div><div class="rl2">English Service Readiness</div><div class="rs2">ความพร้อมสื่อสารภาษาอังกฤษในงานบริการ (สังเกตจากเสียง)</div></div></div>'
   +'<div class="cdir">'+p.compass.map(c=>'<div class="d">→ '+c+'</div>').join('')+'</div></div></div>';}
 function drawCompass(p){const gc=GORDER.map(g=>p.skills.filter(s=>s[2]===g).length);
- mkChart('cCompass',{type:'radar',data:{labels:GORDER.map(g=>GSHORT[g]),datasets:[{data:gc,fill:true,backgroundColor:'rgba(13,59,52,.14)',borderColor:BRAND.em,borderWidth:2,pointBackgroundColor:BRAND.champ,pointRadius:4,pointBorderColor:'#fff'}]},options:{scales:{r:{min:0,suggestedMax:Math.max(3,...gc),ticks:{display:false,stepSize:1},grid:{color:'#e6e0d4'},angleLines:{color:'#e6e0d4'},pointLabels:{color:'#5a5345',font:{size:11.5,weight:'600'}}}},plugins:{legend:{display:false}}}});}
+ mkChart('cCompass',{type:'bar',data:{labels:GORDER.map(g=>GSHORT[g]),datasets:[{data:gc,backgroundColor:gc.map(v=>v?BRAND.em:'#e8e2d6'),borderRadius:5,barThickness:17}]},
+  options:{indexAxis:'y',scales:{x:{min:0,suggestedMax:Math.max(3,...gc),ticks:{stepSize:1,color:'#9a9384',font:{size:11}},grid:{color:'#efe9dd'}},y:{ticks:{color:'#4a4536',font:{size:12.5,weight:'600'}},grid:{display:false},border:{display:false}}},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' หลักฐาน '+c.parsed.x+' รายการ'}}}}});}
 function meters(p){return p.dims.map(d=>{const w=d[2]==='r'?100:d[2]==='d'?66:33;const c=d[2]==='r'?'var(--em)':d[2]==='d'?'var(--champ)':'var(--sage)';
  return '<div class="mrow"><span class="ml">'+d[0]+'</span><div class="mbar"><i style="width:'+w+'%;background:'+c+'"></i></div><span class="mv rd-'+d[2]+'">'+d[1]+'</span></div>';}).join('');}
 function skillGroups(p){const g={};p.skills.forEach(s=>{(g[s[2]]=g[s[2]]||[]).push(s);});
