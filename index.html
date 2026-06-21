@@ -6,8 +6,8 @@
 :root{--em:#0D3B34;--em2:#0a2e28;--gold:#C6A052;--gold2:#d8b97a;--ivory:#F6F2EB;--sage:#A7B49A;--ink:#2B2B2B}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter','Sarabun',-apple-system,'Segoe UI',Tahoma,sans-serif;color:#fff;background:var(--em);-webkit-font-smoothing:antialiased;scroll-snap-type:y mandatory;overflow-x:hidden}
-.slide{min-height:100vh;scroll-snap-align:start;display:flex;align-items:center;position:relative;overflow:hidden}
+body{font-family:'Inter','Sarabun',-apple-system,'Segoe UI',Tahoma,sans-serif;color:#fff;background:var(--em);-webkit-font-smoothing:antialiased;scroll-snap-type:y proximity;overflow-x:hidden}
+.slide{min-height:100vh;scroll-snap-align:start;scroll-margin-top:0;display:flex;align-items:center;position:relative;overflow:hidden}
 .bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
 .ov{position:absolute;inset:0;z-index:1;background:linear-gradient(95deg,rgba(8,40,35,.94) 0%,rgba(8,40,35,.7) 42%,rgba(8,40,35,.28) 100%)}
 .ov.full{background:linear-gradient(120deg,#0a2e28,#0D3B34 60%,#123f37)}
