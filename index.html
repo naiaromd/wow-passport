@@ -92,6 +92,18 @@ section.tight{padding:64px 0}
 .brandline{color:var(--gold2);font-weight:800;font-size:14px;letter-spacing:3px;margin:14px 0 8px}
 .note{font-size:11.5px;color:#9fb3aa;max-width:680px;margin:20px auto 0;line-height:1.6}
 .foot{background:var(--em2);color:#9fb3aa;font-size:12px;text-align:center;padding:22px}
+.imgcard{padding:0;overflow:hidden}.imgcard .phead{height:172px;background-size:cover;background-position:center}.imgcard .bd{padding:24px}
+.atmo{position:relative;min-height:340px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.atmo .abg{position:absolute;inset:0;background:url(detail-compass.jpg) center/cover}
+.atmo .aov{position:absolute;inset:0;background:linear-gradient(rgba(8,40,35,.72),rgba(8,40,35,.8))}
+.atmo .at{position:relative;z-index:2;color:#fff;max-width:760px;padding:46px 28px}
+.atmo .at .l{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-bottom:12px}
+.atmo .at h3{font-size:27px;font-weight:800;line-height:1.3}
+.wtgrid{display:grid;grid-template-columns:1.12fr .88fr;gap:32px;align-items:center}
+.wtph{border-radius:18px;overflow:hidden;box-shadow:0 14px 34px rgba(13,59,52,.14);border:1px solid var(--line)}
+.wtph img{width:100%;height:430px;object-fit:cover;display:block}
+.wtcards{display:flex;flex-direction:column;gap:14px}.wtcards .card{padding:18px 20px}
+@media(max-width:840px){.wtgrid{grid-template-columns:1fr}.wtph{height:240px}.wtph img{height:240px}}
 @media(max-width:840px){.kpis,.cards3,.gains,.tl{grid-template-columns:1fr 1fr}.split,.split.rev{grid-template-columns:1fr}.hero h1{font-size:34px}.hero .cmp{display:none}.cards2{grid-template-columns:1fr}}
 @media(max-width:520px){.kpis,.cards3,.gains,.tl{grid-template-columns:1fr}}
 </style></head><body>
@@ -130,12 +142,15 @@ section.tight{padding:64px 0}
  <div class="kick">What We Tested <span class="dot"></span> สิ่งที่เราทดสอบ</div>
  <h2 class="sec">รวมหลักฐาน 3 แหล่งให้เห็นภาพคนอย่างเป็นธรรม</h2>
  <p class="lead">ไม่ใช่ข้อสรุปขั้นสุดท้าย แต่เป็นการสะท้อนเชิงพัฒนา ที่ทั้งพนักงาน องค์กร และ HR เข้าใจร่วมกัน</p>
- <div class="cards3">
+ <div class="wtgrid"><div class="wtcards">
   <div class="card"><div class="ic">📄</div><h3>Evidence</h3><p>เอกสาร ใบอนุญาต และใบรับรอง — หลักฐานที่จับต้องได้ ตรวจการมีอยู่ด้วย OCR แม้สแกนรวมไฟล์</p></div>
   <div class="card"><div class="ic">🎙</div><h3>Voice</h3><p>ตัวอย่างเสียงการแนะนำตัวและตอบคำถาม เพื่อสังเกตการสื่อสารและความพร้อมภาษาอังกฤษเชิงบริการ</p></div>
   <div class="card"><div class="ic">📝</div><h3>Self-report</h3><p>มุมมองและเป้าหมายที่เจ้าตัวสะท้อนเอง ประกอบการอ่านบริบทของแต่ละคน</p></div>
- </div>
+ </div><div class="wtph"><img src="atmosphere.jpg" alt="WOW wellness space"></div></div>
 </div></section>
+
+<section class="atmo"><div class="abg"></div><div class="aov"></div>
+ <div class="at"><div class="l">Wise of Wellness</div><h3>พื้นที่แห่งการเติบโตอย่างมีหลักฐาน — Evidence that guides, care that grows</h3></div></section>
 
 <!-- EVIDENCE FLOW RESULT -->
 <section class="onIv"><div class="wrap">
@@ -194,10 +209,10 @@ section.tight{padding:64px 0}
  <div class="kick">HR &amp; Review Workflow <span class="dot"></span> มุมพัฒนาคนและการทบทวน</div>
  <h2 class="sec">จากภาพรวม สู่การลงมือพัฒนาและยืนยันหลักฐาน</h2>
  <div class="cards2">
-  <div class="card"><div class="ic">🧭</div><h3>HR — Development &amp; Verification</h3><p>Training needs ของทีม (ภาษาอังกฤษเป็นธีมหลัก) · Leadership pipeline · ข้อเสนอแนะการพัฒนารายบุคคล</p>
-   <div style="margin-top:16px"><a class="linkb" href="hr.html">เปิด HR View →</a></div></div>
-  <div class="card"><div class="ic">🔎</div><h3>Evidence Review Console</h3><p>เครื่องมือปฏิบัติการ — ทบทวนหลักฐานทีละชิ้น เลื่อนระดับ Trust Pathway รีวิวเสียง และจัดการฐานข้อมูลผู้ออกเอกสาร</p>
-   <div style="margin-top:16px"><a class="linkb" href="review.html">เปิด Review Console →</a></div></div>
+  <div class="card imgcard"><div class="phead" style="background-image:url(hr.jpg)"></div><div class="bd"><div class="ic">🧭</div><h3>HR — Development &amp; Verification</h3><p>Training needs ของทีม (ภาษาอังกฤษเป็นธีมหลัก) · Leadership pipeline · ข้อเสนอแนะการพัฒนารายบุคคล</p>
+   <div style="margin-top:16px"><a class="linkb" href="hr.html">เปิด HR View →</a></div></div></div>
+  <div class="card imgcard"><div class="phead" style="background-image:url(review.jpg)"></div><div class="bd"><div class="ic">🔎</div><h3>Evidence Review Console</h3><p>เครื่องมือปฏิบัติการ — ทบทวนหลักฐานทีละชิ้น เลื่อนระดับ Trust Pathway รีวิวเสียง และจัดการฐานข้อมูลผู้ออกเอกสาร</p>
+   <div style="margin-top:16px"><a class="linkb" href="review.html">เปิด Review Console →</a></div></div></div>
  </div>
 </div></section>
 
