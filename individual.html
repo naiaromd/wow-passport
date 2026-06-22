@@ -211,8 +211,8 @@ function trustPathway(){const st=[['L1','Uploaded','อัปโหลด','done
 function compassCard(p){const enPct=p.ec==='r'?100:p.ec==='d'?66:33;const enCol=p.ec==='r'?'#0D3B34':p.ec==='d'?'#C6A052':'#A7B49A';const cov=new Set(p.skills.map(s=>s[2])).size;
  return '<div class="card compass"><div class="cwrap"><canvas id="cCompass"></canvas></div>'
   +'<div class="cmeta"><div class="secH" style="display:flex;align-items:center;gap:8px">'+IC('target',null,17)+'My Skill Evidence · หลักฐานทักษะของฉัน</div><div class="secSub">จำนวนหลักฐานในแต่ละหมวดทักษะ · ครอบคลุม '+cov+'/6 หมวด — กลุ่มที่เป็น 0 เป็นเรื่องปกติตามบทบาท ไม่ใช่จุดอ่อน</div>'
-  +'<div class="enring"><div class="cring" style="background:conic-gradient('+enCol+' '+enPct+'%, #ece5d6 0)"><div class="inner" style="color:'+enCol+'">'+RDLBL[p.ec]+'</div></div>'
-    +'<div><div class="rl2">English Service Readiness</div><div class="rs2">ความพร้อมสื่อสารภาษาอังกฤษในงานบริการ (สังเกตจากเสียง)</div></div></div>'
+  +'<div class="enring"><div class="cring" style="background:conic-gradient('+enCol+' '+enPct+'%, #ece5d6 0)"><div class="inner" style="color:'+enCol+'">'+IC(p.ec==='r'?'check':p.ec==='d'?'clock':'sparkle',enCol,26)+'</div></div>'
+    +'<div><div class="rl2">English Service Readiness</div><div class="rs2">ความพร้อมสื่อสารภาษาอังกฤษในงานบริการ (สังเกตจากเสียง)</div><span style="display:inline-block;margin-top:8px;font-size:11.5px;font-weight:800;padding:3px 12px;border-radius:20px;background:#eef3f0;color:'+enCol+'">'+RDLBL[p.ec]+' · '+RDEN[p.ec]+'</span></div></div>'
   +'<div class="cdir">'+p.compass.map(c=>'<div class="d">→ '+c+'</div>').join('')+'</div></div></div>';}
 function drawCompass(p){const gc=GORDER.map(g=>p.skills.filter(s=>s[2]===g).length);
  mkChart('cCompass',{type:'bar',data:{labels:GORDER.map(g=>GSHORT[g]),datasets:[{data:gc,backgroundColor:gc.map(v=>v?BRAND.em:'#e8e2d6'),borderRadius:5,barThickness:17}]},
