@@ -101,7 +101,13 @@ function readyAvg(ppl){return Math.round(ppl.reduce((a,p)=>a+RDVAL[p.ec],0)/ppl.
 function segBar(ppl){const c={r:0,d:0,e:0};ppl.forEach(p=>c[p.ec]++);const t=ppl.length;
  return '<div class="seg">'+['r','d','e'].filter(k=>c[k]).map(k=>'<div style="width:'+(c[k]/t*100)+'%;background:'+RDCOL[k]+'">'+c[k]+'</div>').join('')+'</div>';}
 function legend(){return '<div class="legend"><span><i style="background:'+RDCOL.r+'"></i>พร้อมใช้งาน</span><span><i style="background:'+RDCOL.d+'"></i>กำลังพัฒนา</span><span><i style="background:'+RDCOL.e+'"></i>เริ่มต้น</span></div>';}
-function covByRole(role){const ppl=ORDER.map(p=>VIEW[p]).filter(p=>p.role===role);return GORDER.map(g=>{const c=ppl.filter(p=>p.skills.some(s=>s[2]===g)).length;return ppl.length?Math.round(c/ppl.length*100):0;});}
+const hasG=(p,g)=>p.skills.some(s=>s[2]===g);
+const MGR_AREAS=[['ใบอนุญาต / ดำเนินการ',p=>hasG(p,'Required')],['บริหารธุรกิจ / การเงิน',p=>hasG(p,'Management')],['ผู้นำ & พัฒนาทีม',p=>hasG(p,'Training')||!!p.lead],['องค์รวม / บริการ',p=>hasG(p,'Holistic')],['การสื่อสาร (EN)',p=>p.ec==='r']];
+const THR_AREAS=[['ใบอนุญาตวิชาชีพ',p=>hasG(p,'Required')],['นวด & เทคนิค',p=>hasG(p,'Massage')],['ทรีตเมนต์ / ผิว',p=>hasG(p,'Spa Treatment')],['องค์รวม / Holistic',p=>hasG(p,'Holistic')],['การสื่อสาร (EN)',p=>p.ec==='r']];
+function roleCard(role,defs,color){const ppl=ORDER.map(p=>VIEW[p]).filter(p=>p.role===role);const n=ppl.length;
+ const rows=defs.map(d=>{const c=ppl.filter(d[1]).length;const pct=n?Math.round(c/n*100):0;
+  return '<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px"><span style="font-size:12.5px;width:168px;font-weight:600;color:#3c473f">'+d[0]+'</span><div style="flex:1;height:11px;background:#ece6d8;border-radius:6px;overflow:hidden"><i style="display:block;height:100%;border-radius:6px;background:'+color+';width:'+pct+'%"></i></div><span style="font-size:11.5px;font-weight:800;color:var(--em2);width:34px;text-align:right">'+c+'/'+n+'</span></div>';}).join('');
+ return '<div class="card sec"><div class="secH">'+role+'</div><div class="secSub">พื้นที่ที่คาดหวังของบทบาทนี้ ('+n+' คน) · ความครอบคลุมของหลักฐาน</div>'+rows+'</div>';}
 function themeCounts(ppl){const T=[['ภาษาอังกฤษ','อังกฤษ|English'],['ภาวะผู้นำ','ผู้นำ|Leadership'],['การเงิน/ธุรกิจ','การเงิน|ธุรกิจ|KPI'],['เทคนิค/องค์ความรู้','เทคนิค|treatment|holistic|พูดสด|ทีมเวิร์ก|repertoire|องค์รวม'],['ทำเล็บ','เล็บ']];
  return T.map(t=>{const re=new RegExp(t[1]);const names=ppl.filter(p=>re.test((p.growth.join(' ')+' '+p.compass.join(' ')+' '+p.needs.join(' ')))).map(p=>p.name.split(' ')[0]);return [t[0],names.length,names];}).filter(x=>x[1]).sort((a,b)=>b[1]-a[1]);}
 function exec(items){return '<div class="exec"><div class="exH">★ Key Takeaways</div><div class="exRow">'+items.map(it=>'<div class="exItem"><span class="exN">'+it[0]+'</span><div><div class="exT">'+it[1]+'</div><div class="exS">'+it[2]+'</div></div></div>').join('')+'</div></div>';}
@@ -116,13 +122,12 @@ function renderAll(){const all=ORDER.map(p=>VIEW[p]);const t0=themeCounts(all)[0
         ['🎯','จุดแข็งร่วม: '+GLBL[topG],'Manager แข็งงานบริหาร/องค์รวม · Therapist แข็งงานนวด']])
   +spotlight(all)
   +'<div class="kpis"><div class="card kpi"><div class="n">'+all.length+'</div><div class="l">บุคลากรทั้งหมด</div></div><div class="card kpi"><div class="n">'+ORGN.length+'</div><div class="l">สาขา</div></div><div class="card kpi c2"><div class="n">'+all.filter(p=>p.lead==='role').length+'</div><div class="l">ผู้นำปัจจุบัน</div></div><div class="card kpi c2"><div class="n">'+all.filter(p=>p.lead==='aspire').length+'</div><div class="l">สนใจเป็นผู้นำ</div></div></div>'
-  +'<div class="chart2"><div class="card sec"><div class="secH">Team Competency · รายตำแหน่ง</div><div class="secSub">% ของคนในแต่ละตำแหน่งที่มีหลักฐานในกลุ่มทักษะนั้น</div><div class="chartbox"><canvas id="cRole"></canvas></div></div>'
-    +'<div class="card sec"><div class="secH">ธีมการพัฒนาของทีม</div><div class="secSub">จำนวนคนที่พูดถึงแต่ละเรื่อง — ยิ่งสูง ยิ่งควรจัดเป็นโปรแกรมรวม</div><div class="chartbox"><canvas id="cTheme"></canvas></div></div></div>'
+  +'<div style="font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:#9c7e3e;font-weight:700;margin:8px 0 4px">Evidence by Role · หลักฐานตามบทบาท</div>'
+  +'<div class="secSub" style="margin-bottom:12px">Manager กับ Therapist มีพื้นที่ที่คาดหวังต่างกัน — แสดงความครอบคลุมของหลักฐานตามบทบาท (ไม่ใช่คะแนน competency และไม่นำสองบทบาทมาเทียบแกนเดียวกัน)</div>'
+  +'<div class="chart2">'+roleCard('Spa Manager',MGR_AREAS,BRAND.em)+roleCard('Therapist',THR_AREAS,BRAND.champ)+'</div>'
+  +'<div class="card sec"><div class="secH">ธีมการพัฒนาของทีม</div><div class="secSub">จำนวนคนที่พูดถึงแต่ละเรื่อง — ยิ่งสูง ยิ่งควรจัดเป็นโปรแกรมรวม</div><div class="chartbox"><canvas id="cTheme"></canvas></div></div>'
   +'<div class="card sec"><div class="secH">🏢 เปรียบเทียบความพร้อมรายสาขา</div><div class="bcards">'+ORGN.map(o=>{const ppl=ORGS[o].map(p=>VIEW[p]);
      return '<div class="bcard"><div class="bn">🏢 '+o+'</div><div class="bs">'+ppl.length+' คน · '+ppl.filter(p=>p.role==='Spa Manager').length+' ผู้จัดการ</div><div class="gauge"><span class="g">'+readyAvg(ppl)+'%</span><span class="gl">ความพร้อมเฉลี่ย</span></div>'+segBar(ppl)+legend()+'</div>';}).join('')+'</div></div>';
- const D=[{label:'Spa Manager',data:covByRole('Spa Manager'),backgroundColor:'rgba(28,85,71,.18)',borderColor:BRAND.em,pointBackgroundColor:BRAND.em},
-          {label:'Therapist',data:covByRole('Therapist'),backgroundColor:'rgba(189,154,95,.18)',borderColor:BRAND.champ,pointBackgroundColor:BRAND.champ}];
- mkChart('cRole',{type:'radar',data:{labels:GORDER.map(g=>GLBL[g]),datasets:D},options:{scales:{r:{min:0,max:100,ticks:{stepSize:25,backdropColor:'transparent'},grid:{color:'#e3ddcf'},angleLines:{color:'#e3ddcf'}}},plugins:{legend:{position:'bottom'}}}});
  const tc=themeCounts(all);
  mkChart('cTheme',{type:'bar',data:{labels:tc.map(t=>t[0]),datasets:[{data:tc.map(t=>t[1]),backgroundColor:tc.map((t,i)=>i===0?BRAND.champ:BRAND.em),borderRadius:6}]},options:{indexAxis:'y',scales:{x:{min:0,max:all.length,ticks:{stepSize:1}}},plugins:{legend:{display:false}}}});
 }

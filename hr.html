@@ -106,7 +106,7 @@ function render(){const ppl=ORDER.map(p=>VIEW[p]);
    +'<div class="chart2"><div class="card sec"><div class="secH">Training Needs ของทีม</div><div class="secSub">จำนวนรายการตามประเภท — ภาษาอังกฤษเด่นชัดสุด</div><div class="chartbox"><canvas id="cNeed"></canvas></div></div>'
      +'<div class="card sec"><div class="secH">ความพร้อมภาษาอังกฤษของทีม</div><div class="secSub">สัดส่วนระดับความพร้อม</div><div class="chartbox"><canvas id="cEn"></canvas></div></div></div>'
    +'<div class="card sec"><div class="secH">Training Needs · รายละเอียดตามประเภท</div><div class="needgrid">'+needCards+'</div></div>'
-   +'<div class="card sec"><div class="secH">Team Competency · ความครอบคลุมทักษะ</div><div class="secSub">จำนวนคนที่มีหลักฐานในแต่ละกลุ่มทักษะ (จาก '+ppl.length+' คน)</div><div class="chartbox"><canvas id="cCov"></canvas></div></div>'
+   +'<div class="card sec"><div class="secH">Evidence Coverage by Area · ความครอบคลุมหลักฐานตามหมวด</div><div class="secSub">จำนวนคนที่มีหลักฐานในแต่ละหมวดทักษะ (จาก '+ppl.length+' คน) — เป็น evidence coverage ไม่ใช่คะแนน competency</div><div class="chartbox"><canvas id="cCov"></canvas></div></div>'
    +'<div class="card sec"><div class="secH">👤 รายบุคคล · ข้อเสนอแนะการพัฒนา</div>'+rows+'</div>';
  mkChart('cNeed',{type:'bar',data:{labels:bk.map(b=>b[0]),datasets:[{data:bk.map(b=>b[1].length),backgroundColor:bk.map((b,i)=>i===0?BRAND.champ:BRAND.em),borderRadius:6}]},options:{indexAxis:'y',scales:{x:{min:0,ticks:{stepSize:1}}},plugins:{legend:{display:false}}}});
  mkChart('cEn',{type:'doughnut',data:{labels:['พร้อมใช้งาน','กำลังพัฒนา','เริ่มต้น'],datasets:[{data:[cc.r,cc.d,cc.e],backgroundColor:[RDCOL.r,RDCOL.d,RDCOL.e]}]},options:{plugins:{legend:{position:'bottom'}}}});

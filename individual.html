@@ -166,7 +166,7 @@ function trustPathway(){const st=[['L1','Uploaded','อัปโหลด','done
   +'<div class="tpnote">บางรายการ <b>needs confirmation</b> (เช่น ชื่อบนเอกสาร หรือสแกนจาง) จะถูกยืนยันในขั้นการทบทวน ก่อนนำไปใช้ตัดสินใจ</div></div>';}
 function compassCard(p){const enPct=p.ec==='r'?100:p.ec==='d'?66:33;const enCol=p.ec==='r'?'#0D3B34':p.ec==='d'?'#C6A052':'#A7B49A';const cov=new Set(p.skills.map(s=>s[2])).size;
  return '<div class="card compass"><div class="cwrap"><canvas id="cCompass"></canvas></div>'
-  +'<div class="cmeta"><div class="secH">My Competency Compass</div><div class="secSub">จำนวนหลักฐานในแต่ละกลุ่มทักษะ · ครอบคลุม '+cov+'/6 กลุ่ม — กลุ่มที่เป็น 0 เป็นเรื่องปกติตามบทบาท</div>'
+  +'<div class="cmeta"><div class="secH">My Skill Evidence · หลักฐานทักษะของฉัน</div><div class="secSub">จำนวนหลักฐานในแต่ละหมวดทักษะ · ครอบคลุม '+cov+'/6 หมวด — กลุ่มที่เป็น 0 เป็นเรื่องปกติตามบทบาท ไม่ใช่จุดอ่อน</div>'
   +'<div class="enring"><div class="cring" style="background:conic-gradient('+enCol+' '+enPct+'%, #ece5d6 0)"><div class="inner" style="color:'+enCol+'">'+RDLBL[p.ec]+'</div></div>'
     +'<div><div class="rl2">English Service Readiness</div><div class="rs2">ความพร้อมสื่อสารภาษาอังกฤษในงานบริการ (สังเกตจากเสียง)</div></div></div>'
   +'<div class="cdir">'+p.compass.map(c=>'<div class="d">→ '+c+'</div>').join('')+'</div></div></div>';}

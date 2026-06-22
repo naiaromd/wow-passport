@@ -13,123 +13,118 @@ img{display:block;max-width:100%}
 .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--gold);margin:0 3px 3px}
 h2.sec{font-size:31px;font-weight:800;color:var(--em);letter-spacing:.2px;line-height:1.18;margin-bottom:8px}
 .lead{font-size:16px;color:var(--mut);max-width:680px;margin-bottom:30px}
-section{padding:88px 0}
+section{padding:84px 0;scroll-margin-top:64px}
 .onIv{background:var(--ivory)} .onIv2{background:var(--ivory2)} .onEm{background:var(--em);color:#fff}
 .onEm h2.sec{color:#fff} .onEm .kick{color:var(--gold2)} .onEm .lead{color:#cfe0d8}
-/* progress + reveal */
 .progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold2),var(--gold));z-index:60}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .85s cubic-bezier(.2,.7,.2,1)}
-.reveal.in{opacity:1;transform:none}
-.gdiv{display:flex;align-items:center;justify-content:center;gap:12px;padding:2px 0 0}
-.gdiv i{height:1px;width:70px;background:linear-gradient(90deg,transparent,var(--gold))}.gdiv i:last-child{background:linear-gradient(90deg,var(--gold),transparent)}
-.gdiv b{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(198,160,82,.18)}
-/* nav */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .85s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}
 .nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;gap:10px;padding:12px 28px;transition:.3s}
 .nav.solid{background:rgba(9,46,51,.96);box-shadow:0 2px 18px rgba(0,0,0,.16)}
-.nav img{height:30px}.nav .nm{color:#fff;font-weight:800;font-size:14px;letter-spacing:.3px}.nav .sp{flex:1}
-.nav a.cta{color:#1a1a1a;background:var(--gold);text-decoration:none;font-size:12.5px;font-weight:800;padding:8px 16px;border-radius:22px;transition:.2s}
-.nav a.cta:hover{background:var(--gold2);transform:translateY(-1px)}
+.nav img{height:30px}.nav .nm{color:#fff;font-weight:800;font-size:14px}.nav .sp{flex:1}
+.nav a.cta{color:#1a1a1a;background:var(--gold);text-decoration:none;font-size:12.5px;font-weight:800;padding:8px 16px;border-radius:22px;transition:.2s}.nav a.cta:hover{background:var(--gold2);transform:translateY(-1px)}
 /* hero */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(120deg,#0a2e28,#0D3B34 58%,#13463a);color:#fff}
 .hero .bg{position:absolute;inset:0;background:url(cover.jpg) center/cover;opacity:.2;animation:kb 24s ease-in-out infinite alternate}
-@keyframes kb{from{transform:scale(1.0)}to{transform:scale(1.13)}}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.13)}}
 .hero .cmp{position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:640px;opacity:.42;pointer-events:none;animation:spin 120s linear infinite}
 @keyframes spin{to{transform:translateY(-50%) rotate(360deg)}}
 .hero .inner{position:relative;z-index:2}
-.hero img.lk{height:120px;margin-bottom:22px}
+.hero img.lk{height:118px;margin-bottom:20px}
 .hero .pass{font-size:16px;letter-spacing:9px;text-transform:uppercase;color:var(--gold2);font-weight:700}
-.hero h1{font-size:48px;font-weight:800;margin:14px 0 8px;line-height:1.1;max-width:700px}
-.hero p{font-size:18px;color:#dce7e1;max-width:560px;margin-bottom:8px}
+.hero h1{font-size:46px;font-weight:800;margin:14px 0 8px;line-height:1.1;max-width:700px}
+.hero p{font-size:18px;color:#dce7e1;max-width:560px}
 .hero .meta{font-size:13px;color:var(--sage);letter-spacing:1px;margin-top:18px}
-.hbtns{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.hbtns{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
 .btn{display:inline-block;text-decoration:none;font-weight:800;font-size:14px;padding:13px 24px;border-radius:30px;transition:.2s}
 .btn.g{background:var(--gold);color:#1a1a1a}.btn.g:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 20px rgba(198,160,82,.3)}
 .btn.o{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}.btn.o:hover{border-color:var(--gold2);color:var(--gold2)}
-.scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:#bcd0c7;font-size:11px;letter-spacing:2px;text-align:center;z-index:2}
+.scrollcue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:#bcd0c7;font-size:11px;letter-spacing:2px;text-align:center;z-index:2}
 .scrollcue span{display:block;font-size:20px;animation:bob 1.6s infinite}@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+/* journey hub */
+.hub{margin-top:-58px;position:relative;z-index:20}
+.hubgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.hcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 20px;box-shadow:0 14px 38px rgba(13,59,52,.1);text-decoration:none;color:var(--ink);display:flex;flex-direction:column;transition:.22s}
+.hcard:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(13,59,52,.16)}
+.hcard .num{font-size:12px;font-weight:800;color:var(--gold);letter-spacing:1px}
+.hcard .ic{width:44px;height:44px;border-radius:12px;background:var(--sage2);display:flex;align-items:center;justify-content:center;font-size:21px;margin:8px 0 12px}
+.hcard h3{font-size:17px;font-weight:800;color:var(--em)}
+.hcard p{font-size:12.5px;color:var(--mut);line-height:1.5;margin-top:5px;flex:1}
+.hcard .go{font-size:12.5px;font-weight:700;color:var(--em);margin-top:14px}
 /* kpi */
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.kpi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 20px;box-shadow:0 8px 24px rgba(13,59,52,.05);transition:.25s}
-.kpi:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(13,59,52,.1)}
-.kpi .n{font-size:36px;font-weight:800;color:var(--em)}.kpi.gd .n{color:var(--gold)}
-.kpi .l{font-size:12.5px;color:var(--mut);margin-top:4px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 20px;box-shadow:0 8px 24px rgba(13,59,52,.05);transition:.25s}.kpi:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(13,59,52,.1)}
+.kpi .n{font-size:34px;font-weight:800;color:var(--em)}.kpi.gd .n{color:var(--gold)}.kpi .l{font-size:12.5px;color:var(--mut);margin-top:4px}
 /* cards */
 .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .cards2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px;box-shadow:0 8px 26px rgba(13,59,52,.06);transition:.25s}
-.card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(13,59,52,.12)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 8px 26px rgba(13,59,52,.06);transition:.25s}.card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(13,59,52,.12)}
 .card .ic{width:46px;height:46px;border-radius:13px;background:var(--sage2);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
-.card h3{font-size:18px;font-weight:800;color:var(--em);margin-bottom:6px}
-.card p{font-size:14px;color:var(--mut);line-height:1.6}
-.imgcard{padding:0;overflow:hidden}.imgcard .phead{height:178px;background-size:cover;background-position:center;transition:.4s}.imgcard:hover .phead{transform:scale(1.05)}.imgcard .bd{padding:24px}
-/* ladder */
-.ladder{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-.rung{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 15px;transition:.25s}
-.rung:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(13,59,52,.1)}
-.rung.cur{background:var(--em);border-color:var(--em)}
-.rung .lv{font-size:10.5px;font-weight:800;letter-spacing:1px;color:var(--gold)}.rung.cur .lv{color:var(--gold2)}
-.rung .t{font-size:14.5px;font-weight:700;color:var(--em);margin-top:5px}.rung.cur .t{color:#fff}
-.rung .by{font-size:11.5px;color:var(--mut);margin-top:6px}.rung.cur .by{color:#bcd0c7}
-.flowbar{height:6px;border-radius:4px;background:linear-gradient(90deg,var(--sage),var(--gold) 60%,var(--em));margin:26px 0 10px}
+.card h3{font-size:18px;font-weight:800;color:var(--em);margin-bottom:6px}.card p{font-size:14px;color:var(--mut);line-height:1.6}
+.imgcard{padding:0;overflow:hidden}.imgcard .phead{aspect-ratio:16/10;background-size:cover;background-position:center;transition:.4s}.imgcard:hover .phead{transform:scale(1.05)}.imgcard .bd{padding:22px}
 /* split */
-.split{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
-.split.rev{grid-template-columns:.95fr 1.05fr}
-.split .ph{border-radius:18px;overflow:hidden;box-shadow:0 16px 38px rgba(13,59,52,.16);border:1px solid var(--line)}
-.split .ph img{width:100%;height:340px;object-fit:cover;transition:.5s}.split .ph:hover img{transform:scale(1.04)}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}.split.rev{grid-template-columns:.95fr 1.05fr}
+.ph{border-radius:18px;overflow:hidden;box-shadow:0 16px 38px rgba(13,59,52,.16);border:1px solid var(--line)}
+.ph img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:.5s}.ph:hover img{transform:scale(1.04)}
 .feat{list-style:none;margin:16px 0 22px}
 .feat li{font-size:14.5px;color:var(--ink);padding:7px 0 7px 22px;position:relative;border-top:1px dashed var(--line)}
 .feat li:first-child{border-top:0}.feat li:before{content:'';position:absolute;left:2px;top:15px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
 .onEm .feat li{color:#e7efea;border-color:rgba(255,255,255,.12)}
-.linkb{display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:var(--em);color:#fff;font-weight:700;font-size:13.5px;padding:11px 20px;border-radius:11px;transition:.2s}
-.linkb:hover{background:var(--em2);transform:translateY(-2px)} .onEm .linkb{background:var(--gold);color:#1a1a1a}.onEm .linkb:hover{background:var(--gold2)}
-/* what we tested split */
-.wtgrid{display:grid;grid-template-columns:1.12fr .88fr;gap:32px;align-items:center}
-.wtph{border-radius:18px;overflow:hidden;box-shadow:0 16px 38px rgba(13,59,52,.16);border:1px solid var(--line)}
-.wtph img{width:100%;height:440px;object-fit:cover;transition:.5s}.wtph:hover img{transform:scale(1.04)}
-.wtcards{display:flex;flex-direction:column;gap:14px}.wtcards .card{padding:18px 20px}
-/* atmosphere bands */
-.atmo{position:relative;min-height:360px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.linkb{display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:var(--em);color:#fff;font-weight:700;font-size:13.5px;padding:11px 20px;border-radius:11px;transition:.2s}.linkb:hover{background:var(--em2);transform:translateY(-2px)}.onEm .linkb{background:var(--gold);color:#1a1a1a}
+/* ladder */
+.ladder{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.rung{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 15px;transition:.25s}.rung:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(13,59,52,.1)}
+.rung.cur{background:var(--em);border-color:var(--em)}
+.rung .lv{font-size:10.5px;font-weight:800;letter-spacing:1px;color:var(--gold)}.rung.cur .lv{color:var(--gold2)}
+.rung .t{font-size:14.5px;font-weight:700;color:var(--em);margin-top:5px}.rung.cur .t{color:#fff}
+.rung .by{font-size:11.5px;color:var(--mut);margin-top:6px}.rung.cur .by{color:#bcd0c7}
+/* atmosphere + quote */
+.atmo{position:relative;min-height:340px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
 .atmo .abg{position:absolute;inset:0;background-size:cover;background-position:center}
 .atmo .aov{position:absolute;inset:0;background:linear-gradient(rgba(8,40,35,.72),rgba(8,40,35,.8))}
-.atmo .at{position:relative;z-index:2;color:#fff;max-width:780px;padding:48px 28px}
+.atmo .at{position:relative;z-index:2;color:#fff;max-width:780px;padding:46px 28px}
 .atmo .at .l{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-bottom:12px}
-.atmo .at h3{font-size:27px;font-weight:800;line-height:1.3}
-/* quote band */
+.atmo .at h3{font-size:26px;font-weight:800;line-height:1.3}
 .qband{position:relative;overflow:hidden;text-align:center}
 .qband .qbg{position:absolute;inset:0;background:url(detail-sand.jpg) center/cover}
 .qband .qov{position:absolute;inset:0;background:linear-gradient(rgba(8,40,35,.84),rgba(8,40,35,.88))}
-.qband .qc{position:relative;z-index:2;color:#fff;max-width:820px;margin:0 auto;padding:84px 28px}
-.qband .mark{font-size:54px;color:var(--gold2);line-height:.4;font-family:Georgia,serif}
-.qband blockquote{font-size:26px;font-weight:700;line-height:1.5;margin:18px 0 20px}
+.qband .qc{position:relative;z-index:2;color:#fff;max-width:820px;margin:0 auto;padding:80px 28px}
+.qband .mark{font-size:52px;color:var(--gold2);line-height:.4;font-family:Georgia,serif}
+.qband blockquote{font-size:25px;font-weight:700;line-height:1.5;margin:18px 0 20px}
 .qband cite{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold2);font-style:normal;font-weight:700}
-/* gains */
-.gains{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.gain .gnum{font-size:13px;font-weight:800;color:var(--gold);letter-spacing:1px}
-.gain .gh{font-size:16px;font-weight:800;color:var(--em);margin:8px 0 5px}
-.gain p{font-size:13.5px;color:var(--mut);line-height:1.55}
+/* findings */
+.find{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:6px 0 34px}
+.fcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 8px 22px rgba(13,59,52,.05)}
+.fcard .fn{font-size:13px;font-weight:800;color:var(--gold);letter-spacing:1px}
+.fcard h4{font-size:16px;color:var(--em);margin:7px 0 6px}.fcard p{font-size:13px;color:var(--mut);line-height:1.55}
+.viewgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.vcard{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(13,59,52,.07);display:flex;flex-direction:column;transition:.22s}.vcard:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(13,59,52,.14)}
+.vcard .ph2{aspect-ratio:3/2;background-size:cover;background-position:center}
+.vcard .bd{padding:15px 16px 17px;display:flex;flex-direction:column;flex:1}
+.vcard h3{font-size:15px;color:var(--em);font-weight:800}.vcard .role{font-size:10px;letter-spacing:1.1px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:2px}
+.vcard p{font-size:11.5px;color:var(--mut);line-height:1.5;margin:8px 0 12px;flex:1}
+.vbtn{text-align:center;background:var(--em);color:#fff;text-decoration:none;border-radius:9px;padding:9px;font-size:12px;font-weight:700}.vbtn:hover{background:var(--em2)}
+/* gains + timeline + feedback */
 .gainsplit{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
-.gainsplit .ph{border-radius:18px;overflow:hidden;box-shadow:0 16px 38px rgba(13,59,52,.16);border:1px solid var(--line)}
-.gainsplit .ph img{width:100%;height:400px;object-fit:cover}
-.gaincol{display:flex;flex-direction:column;gap:16px}
-/* timeline */
-.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
-.tl .ph{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 8px 22px rgba(13,59,52,.05);transition:.25s}
-.tl .ph:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(13,59,52,.1)}
-.tl .ph .d{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:800}
-.tl .ph h4{font-size:17px;color:var(--em);margin:6px 0 10px}
-.tl .ph ul{margin:0;padding-left:17px;font-size:13.5px;color:var(--mut);line-height:1.7}
+.gaincol{display:flex;flex-direction:column;gap:14px}
+.gain .gnum{font-size:13px;font-weight:800;color:var(--gold)}.gain .gh{font-size:16px;font-weight:800;color:var(--em);margin:6px 0 4px}.gain p{font-size:13.5px;color:var(--mut);line-height:1.5}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:8px 0 26px}
+.tl .ph3{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 8px 22px rgba(13,59,52,.05);transition:.25s}.tl .ph3:hover{transform:translateY(-4px)}
+.tl .ph3 .d{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:800}
+.tl .ph3 h4{font-size:17px;color:var(--em);margin:6px 0 10px}.tl .ph3 ul{margin:0;padding-left:17px;font-size:13.5px;color:var(--mut);line-height:1.7}
+.fb{background:linear-gradient(120deg,#0a2e28,#13463a);color:#fff;border-radius:20px;padding:34px 32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.fb .txt{flex:1;min-width:240px}.fb h3{font-size:21px;font-weight:800}.fb p{font-size:14px;color:#cfe0d8;margin-top:6px}
 /* final */
 .final{text-align:center;position:relative;overflow:hidden}
-.final .cmp{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:560px;opacity:.16;pointer-events:none;animation:spin 120s linear infinite}
-.final img.lk{height:80px;margin:0 auto 18px}
-.brandline{color:var(--gold2);font-weight:800;font-size:14px;letter-spacing:3px;margin:16px 0 8px}
+.final .cmp{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:540px;opacity:.16;pointer-events:none;animation:spin 120s linear infinite}
+.final img.lk{height:78px;margin:0 auto 16px}
+.brandline{color:var(--gold2);font-weight:800;font-size:14px;letter-spacing:3px;margin:14px 0 8px}
 .note{font-size:11.5px;color:#9fb3aa;max-width:700px;margin:22px auto 0;line-height:1.6}
 .foot{background:var(--em2);color:#9fb3aa;font-size:12px;text-align:center;padding:22px}
-@media(max-width:860px){.kpis,.cards3,.gains,.tl{grid-template-columns:1fr 1fr}.split,.split.rev,.wtgrid,.gainsplit{grid-template-columns:1fr}.hero h1{font-size:34px}.hero .cmp{display:none}.cards2{grid-template-columns:1fr}.wtph img,.gainsplit .ph img{height:260px}.qband blockquote{font-size:21px}}
-@media(max-width:520px){.kpis,.cards3,.gains,.tl{grid-template-columns:1fr}}
+@media(max-width:860px){.hubgrid,.kpis,.cards3,.find,.viewgrid{grid-template-columns:1fr 1fr}.split,.split.rev,.gainsplit{grid-template-columns:1fr}.hero h1{font-size:34px}.hero .cmp{display:none}.cards2{grid-template-columns:1fr}.tl{grid-template-columns:1fr}.hub{margin-top:-30px}.qband blockquote{font-size:20px}}
+@media(max-width:520px){.hubgrid,.kpis,.viewgrid{grid-template-columns:1fr}}
 </style></head><body>
 <div class="progress" id="prog"></div>
-<div class="nav" id="nav"><img src="logo_mark.png" alt="WOW"><span class="nm">WOW Passport</span><span class="sp"></span><a class="cta" href="individual.html">Open Live Compass →</a></div>
+<div class="nav" id="nav"><img src="logo_mark.png" alt="WOW"><span class="nm">WOW Passport</span><span class="sp"></span><a class="cta" href="#result">ดูผลลัพธ์ →</a></div>
 
 <header class="hero">
  <div class="bg"></div><img class="cmp" src="compass.png" alt="">
@@ -139,50 +134,84 @@ section{padding:88px 0}
   <h1>Wellness intelligence that guides growth</h1>
   <p>ผลการศึกษานำร่องของระบบทบทวนหลักฐานและสมรรถนะเชิงพัฒนา สำหรับบุคลากรสปา</p>
   <div class="meta">PILOT RESULTS · PREPARED FOR MINOR · THAI SPA ASSOCIATION · JUNE 2026</div>
-  <div class="hbtns"><a class="btn g" href="#snapshot">ดูผลนำร่อง ↓</a><a class="btn o" href="individual.html">เปิด Compass จริง</a></div>
+  <div class="hbtns"><a class="btn g" href="#presentation">เริ่มอ่าน ↓</a><a class="btn o" href="#result">ข้ามไปดูผลลัพธ์</a></div>
  </div>
  <div class="scrollcue">เลื่อนลง<span>↓</span></div>
 </header>
 
-<section class="onIv" id="snapshot"><div class="wrap reveal">
- <div class="kick">Pilot Snapshot <span class="dot"></span> ภาพรวมนำร่อง</div>
- <h2 class="sec">ทดลองจริงกับบุคลากร 6 ท่าน 2 สาขา</h2>
- <p class="lead">เก็บหลักฐานจาก 3 แหล่ง แล้วประมวลเป็นภาพความพร้อมและทิศทางการเรียนรู้ (learning direction) ของแต่ละคนและของทีม</p>
- <div class="kpis">
-  <div class="kpi"><div class="n" data-count="6">0</div><div class="l">ผู้เข้าร่วม · 2 สาขา</div></div>
-  <div class="kpi gd"><div class="n" data-count="31">0</div><div class="l">รายการหลักฐาน (เอกสาร 25 + เสียง 6)</div></div>
-  <div class="kpi"><div class="n">3·2·1</div><div class="l">English readiness · Ready / Developing / Emerging</div></div>
-  <div class="kpi gd"><div class="n">2+1</div><div class="l">ผู้นำปัจจุบัน + ผู้แสดงความสนใจเป็นผู้นำ</div></div>
- </div>
-</div></section>
+<!-- JOURNEY HUB -->
+<div class="hub"><div class="wrap"><div class="hubgrid reveal">
+ <a class="hcard" href="#presentation"><div class="num">01</div><div class="ic">✦</div><h3>Initial Presentation</h3><p>แนวคิด WOW Passport · ทำไม &amp; ใช้ทำอะไร</p><div class="go">เริ่มที่นี่ →</div></a>
+ <a class="hcard" href="#methodology"><div class="num">02</div><div class="ic">🔬</div><h3>Methodology</h3><p>วิธีเก็บข้อมูล + สิ่งที่สังเกต (observation)</p><div class="go">ดูวิธีการ →</div></a>
+ <a class="hcard" href="#result"><div class="num">03</div><div class="ic">📊</div><h3>Result</h3><p>เราได้อะไร · Key findings หลายมุมมอง + Dashboard</p><div class="go">ดูผลลัพธ์ →</div></a>
+ <a class="hcard" href="#next"><div class="num">04</div><div class="ic">🧭</div><h3>What's Next</h3><p>ขอ feedback + แนวทางต่อไป</p><div class="go">ก้าวต่อไป →</div></a>
+</div></div></div>
 
-<section class="onIv2"><div class="wrap reveal">
- <div class="kick">What We Tested <span class="dot"></span> สิ่งที่เราทดสอบ</div>
- <h2 class="sec">รวมหลักฐาน 3 แหล่งให้เห็นภาพคนอย่างเป็นธรรม</h2>
- <p class="lead">ไม่ใช่ข้อสรุปขั้นสุดท้าย แต่เป็นการสะท้อนเชิงพัฒนา ที่ทั้งพนักงาน องค์กร และ HR เข้าใจร่วมกัน</p>
- <div class="wtgrid"><div class="wtcards">
-  <div class="card"><div class="ic">📄</div><h3>Evidence</h3><p>เอกสาร ใบอนุญาต และใบรับรอง — หลักฐานที่จับต้องได้ ตรวจการมีอยู่ด้วย OCR แม้สแกนรวมไฟล์</p></div>
-  <div class="card"><div class="ic">🎙</div><h3>Voice</h3><p>ตัวอย่างเสียงการแนะนำตัวและตอบคำถาม เพื่อสังเกตการสื่อสารและความพร้อมภาษาอังกฤษเชิงบริการ</p></div>
-  <div class="card"><div class="ic">📝</div><h3>Self-report</h3><p>มุมมองและเป้าหมายที่เจ้าตัวสะท้อนเอง ประกอบการอ่านบริบทของแต่ละคน</p></div>
- </div><div class="wtph"><img src="atmosphere.jpg" alt="WOW wellness space"></div></div>
+<!-- 01 PRESENTATION -->
+<section class="onIv" id="presentation"><div class="wrap reveal">
+ <div class="kick">01 · Initial Presentation <span class="dot"></span> แนวคิด</div>
+ <h2 class="sec">"สมุดพก + เข็มทิศ" — Passport + Compass</h2>
+ <p class="lead">WOW Passport รวมหลักฐาน 3 แหล่งให้เห็นภาพคนอย่างเป็นธรรม เป็นเครื่องมือเชิงพัฒนา ที่ทั้งพนักงาน องค์กร และ HR เข้าใจร่วมกัน — ไม่ใช่ข้อสรุปขั้นสุดท้าย</p>
+ <div class="split"><div>
+   <ul class="feat">
+    <li><b>Evidence</b> — เอกสาร ใบอนุญาต ใบรับรอง (ตรวจการมีอยู่ด้วย OCR)</li>
+    <li><b>Voice</b> — การสื่อสาร + ความพร้อมภาษาอังกฤษเชิงบริการ จากเสียงจริง</li>
+    <li><b>Self-report</b> — มุมมองและเป้าหมายที่เจ้าตัวสะท้อนเอง</li>
+    <li>นำเสนอใน 4 มุมมอง: พนักงาน · องค์กร · HR · ผู้ทบทวน</li>
+   </ul>
+   <a class="linkb" href="#result">ดูสิ่งที่ได้จากนำร่อง →</a>
+  </div><div class="ph"><img src="care.jpg" alt="WOW concept"></div>
+ </div>
 </div></section>
 
 <section class="atmo"><div class="abg" style="background-image:url(detail-compass.jpg)"></div><div class="aov"></div>
  <div class="at reveal"><div class="l">Wise of Wellness</div><h3>พื้นที่แห่งการเติบโตอย่างมีหลักฐาน — Evidence that guides, care that grows</h3></div></section>
 
-<section class="onIv"><div class="wrap reveal">
- <div class="kick">Evidence Flow Result <span class="dot"></span> เส้นทางความเชื่อมั่น</div>
- <h2 class="sec">Trust Pathway — หลักฐานไล่ระดับความเชื่อมั่น 5 ขั้น</h2>
- <p class="lead">AI ช่วยจัดเรียงและประเมินความเกี่ยวข้องได้ถึงขั้น 3 — ขั้นสูงกว่านั้นรอการยืนยันโดยคน (needs confirmation) ในนำร่องนี้หลักฐานส่วนใหญ่อยู่ที่ขั้น “AI Relevant” พร้อมเข้าสู่การทบทวน</p>
- <div class="ladder">
-  <div class="rung"><div class="lv">LEVEL 1</div><div class="t">Uploaded</div><div class="by">อัปโหลดไฟล์</div></div>
-  <div class="rung"><div class="lv">LEVEL 2</div><div class="t">Extracted</div><div class="by">AI อ่านข้อมูล</div></div>
-  <div class="rung cur"><div class="lv">LEVEL 3</div><div class="t">AI Relevant</div><div class="by">จุดที่ทีมนำร่องอยู่ตอนนี้</div></div>
-  <div class="rung"><div class="lv">LEVEL 4</div><div class="t">WOW Reviewed</div><div class="by">ผู้ทบทวนยืนยัน</div></div>
-  <div class="rung"><div class="lv">LEVEL 5</div><div class="t">Source Verified</div><div class="by">ต้นสังกัด/แหล่งยืนยัน</div></div>
+<!-- 02 METHODOLOGY -->
+<section class="onIv2" id="methodology"><div class="wrap reveal">
+ <div class="kick">02 · Methodology <span class="dot"></span> วิธีการ + Observation</div>
+ <h2 class="sec">เก็บอย่างไร และเราสังเกตอะไร</h2>
+ <p class="lead">รวบรวมหลักฐาน 3 แหล่งจากบุคลากร 6 ท่าน แล้วจัดระดับความเชื่อมั่นด้วย Trust Pathway</p>
+ <div class="cards3" style="margin-bottom:30px">
+  <div class="card"><div class="ic">📄</div><h3>Evidence</h3><p>เอกสาร 25 รายการ — ใบอนุญาต/ใบรับรอง บางส่วนสแกนรวมไฟล์ ใช้ OCR ยืนยันการมีอยู่</p></div>
+  <div class="card"><div class="ic">🎙</div><h3>Voice</h3><p>ตัวอย่างเสียง 6 ราย — แนะนำตัว + ตอบ 4 คำถาม สังเกต 3 มิติ: เข้าใจได้ / ครบถ้วน / ลื่นไหล</p></div>
+  <div class="card"><div class="ic">📝</div><h3>Self-report</h3><p>แบบสอบถาม — ประสบการณ์ ขนาดทีม (เฉพาะ Manager) และเป้าหมายการพัฒนา</p></div>
  </div>
- <div class="flowbar"></div>
- <p class="lead" style="margin:0">ความโปร่งใสนี้ทำให้เห็นชัดว่า อะไรพร้อมแล้ว และอะไร “ยังต้องการการยืนยัน” ก่อนนำไปใช้ตัดสินใจ</p>
+ <div class="kick" style="color:var(--gold)">Trust Pathway · เส้นทางความเชื่อมั่น</div>
+ <div class="ladder">
+  <div class="rung"><div class="lv">L1</div><div class="t">Uploaded</div><div class="by">อัปโหลดไฟล์</div></div>
+  <div class="rung"><div class="lv">L2</div><div class="t">Extracted</div><div class="by">AI อ่านข้อมูล</div></div>
+  <div class="rung cur"><div class="lv">L3</div><div class="t">AI Relevant</div><div class="by">จุดที่นำร่องอยู่ตอนนี้</div></div>
+  <div class="rung"><div class="lv">L4</div><div class="t">WOW Reviewed</div><div class="by">ผู้ทบทวนยืนยัน</div></div>
+  <div class="rung"><div class="lv">L5</div><div class="t">Source Verified</div><div class="by">ต้นสังกัดยืนยัน</div></div>
+ </div>
+ <p class="lead" style="margin:18px 0 0">Observation: AI ช่วยได้ถึง L3 — ขั้นสูงกว่ารอการยืนยันโดยคน · บางรายการ <b>needs confirmation</b> (ชื่อบนเอกสาร/สแกนจาง) ก่อนนำไปใช้ตัดสินใจ</p>
+</div></section>
+
+<!-- 03 RESULT -->
+<section class="onIv" id="result"><div class="wrap reveal">
+ <div class="kick">03 · Result <span class="dot"></span> เราได้อะไรบ้าง</div>
+ <h2 class="sec">ผลนำร่อง — 6 ท่าน 2 สาขา</h2>
+ <p class="lead">ประมวลเป็นภาพความพร้อมและทิศทางการเรียนรู้ ในหลายมุมมอง</p>
+ <div class="kpis" style="margin-bottom:34px">
+  <div class="kpi"><div class="n" data-count="6">0</div><div class="l">ผู้เข้าร่วม · 2 สาขา</div></div>
+  <div class="kpi gd"><div class="n" data-count="31">0</div><div class="l">รายการหลักฐาน (เอกสาร 25 + เสียง 6)</div></div>
+  <div class="kpi"><div class="n">3·2·1</div><div class="l">English readiness · Ready / Developing / Emerging</div></div>
+  <div class="kpi gd"><div class="n">2+1</div><div class="l">ผู้นำปัจจุบัน + ผู้สนใจเป็นผู้นำ</div></div>
+ </div>
+ <div class="kick" style="color:var(--gold)">Key Findings · ข้อค้นพบสำคัญ</div>
+ <div class="find">
+  <div class="fcard"><div class="fn">01</div><h4>ภาษาอังกฤษคือ lever รวมศูนย์</h4><p>4 จาก 6 ท่านชี้เรื่องภาษาอังกฤษ — ลงทุนเป็นโปรแกรมกลุ่มคุ้มกว่าจัดทีละคน</p></div>
+  <div class="fcard"><div class="fn">02</div><h4>จุดแข็งต่างกันตามบทบาท</h4><p>Manager เด่นบริหาร/ผู้นำ · Therapist เด่นงานนวด/เทคนิค — พัฒนาให้ตรงบทบาท</p></div>
+  <div class="fcard"><div class="fn">03</div><h4>ตัดสินใจด้วยหลักฐาน</h4><p>Trust Pathway ทำให้เห็นว่าอะไรพร้อม อะไรยัง needs confirmation</p></div>
+ </div>
+ <div class="kick" style="color:var(--gold)">เปิด Dashboard จริง · 4 มุมมอง</div>
+ <div class="viewgrid">
+  <div class="vcard"><div class="ph2" style="background-image:url(individual.jpg)"></div><div class="bd"><h3>Individual</h3><div class="role">มุมพนักงาน</div><p>Personal Compass · จุดแข็ง/จุดพัฒนา · Evidence Passport</p><a class="vbtn" href="individual.html">เปิด →</a></div></div>
+  <div class="vcard"><div class="ph2" style="background-image:url(corporate.jpg)"></div><div class="bd"><h3>Team Compass</h3><div class="role">มุมองค์กร</div><p>ภาพรวมทีม · เทียบสาขา · Evidence by Role</p><a class="vbtn" href="corporate.html">เปิด →</a></div></div>
+  <div class="vcard"><div class="ph2" style="background-image:url(hr.jpg)"></div><div class="bd"><h3>HR</h3><div class="role">มุมฝ่ายบุคคล</div><p>Training needs · Leadership pipeline · ข้อเสนอแนะ</p><a class="vbtn" href="hr.html">เปิด →</a></div></div>
+  <div class="vcard"><div class="ph2" style="background-image:url(review.jpg)"></div><div class="bd"><h3>Review Console</h3><div class="role">มุมผู้ทบทวน</div><p>ทบทวนหลักฐาน · เลื่อน Trust Pathway · รีวิวเสียง</p><a class="vbtn" href="review.html">เปิด →</a></div></div>
+ </div>
 </div></section>
 
 <section class="qband"><div class="qbg"></div><div class="qov"></div>
@@ -190,88 +219,26 @@ section{padding:88px 0}
   <blockquote>การเป็นผู้นำที่ดีไม่ใช่แค่การสั่งการ แต่คือการสร้างความเชื่อมั่นและความเป็นหนึ่งเดียวกันในทีม</blockquote>
   <cite>— เสียงสะท้อนจากผู้เข้าร่วม · Spa Manager, WOW Passport Pilot</cite></div></section>
 
-<section class="onIv2"><div class="wrap reveal">
- <div class="split">
-  <div>
-   <div class="kick">Individual Compass <span class="dot"></span> มุมพนักงาน</div>
-   <h2 class="sec">เข็มทิศส่วนตัว ที่แต่ละคนเห็นการเติบโตของตัวเอง</h2>
-   <ul class="feat">
-    <li>Personal Compass — จุดแข็งจากจำนวนหลักฐานจริงในแต่ละกลุ่มทักษะ</li>
-    <li>English Service Readiness — อ่านจากเสียงจริง</li>
-    <li>“What is becoming clear” และ “Still taking shape” แทนการตัดสิน</li>
-    <li>My Evidence Passport — หลักฐานเป็นการ์ดที่สะท้อนสมรรถนะ</li>
-   </ul>
-   <a class="linkb" href="individual.html">เปิด My Compass View →</a>
-  </div>
-  <div class="ph"><img src="individual.jpg" alt="Individual Compass"></div>
- </div>
-</div></section>
-
-<section class="onEm"><div class="wrap reveal">
- <div class="split rev">
-  <div class="ph"><img src="corporate.jpg" alt="Team Compass"></div>
-  <div>
-   <div class="kick">Team Compass <span class="dot"></span> มุมองค์กร</div>
-   <h2 class="sec">ภาพรวมทีม เทียบรายสาขาและรายตำแหน่ง</h2>
-   <ul class="feat">
-    <li>ความพร้อมเฉลี่ยของทีม และการกระจายระดับภาษา</li>
-    <li>Competency รายตำแหน่ง — Manager เด่นบริหาร/องค์รวม · Therapist เด่นงานนวด</li>
-    <li>ใครมีศักยภาพ · ใครต้องการการสนับสนุน</li>
-    <li>Skill set ของทีมในภาพเดียว</li>
-   </ul>
-   <a class="linkb" href="corporate.html">เปิด Team Compass →</a>
-  </div>
- </div>
-</div></section>
-
-<section class="onIv"><div class="wrap reveal">
- <div class="kick">HR &amp; Review Workflow <span class="dot"></span> มุมพัฒนาคนและการทบทวน</div>
- <h2 class="sec">จากภาพรวม สู่การลงมือพัฒนาและยืนยันหลักฐาน</h2>
- <div class="cards2">
-  <div class="card imgcard"><div class="phead" style="background-image:url(hr.jpg)"></div><div class="bd"><div class="ic">🧭</div><h3>HR — Development &amp; Verification</h3><p>Training needs ของทีม (ภาษาอังกฤษเป็นธีมหลัก) · Leadership pipeline · ข้อเสนอแนะการพัฒนารายบุคคล</p>
-   <div style="margin-top:16px"><a class="linkb" href="hr.html">เปิด HR View →</a></div></div></div>
-  <div class="card imgcard"><div class="phead" style="background-image:url(review.jpg)"></div><div class="bd"><div class="ic">🔎</div><h3>Evidence Review Console</h3><p>เครื่องมือปฏิบัติการ — ทบทวนหลักฐานทีละชิ้น เลื่อนระดับ Trust Pathway รีวิวเสียง และจัดการฐานข้อมูลผู้ออกเอกสาร</p>
-   <div style="margin-top:16px"><a class="linkb" href="review.html">เปิด Review Console →</a></div></div></div>
- </div>
-</div></section>
-
-<section class="onIv2"><div class="wrap reveal">
- <div class="gainsplit">
-  <div class="gaincol">
-   <div class="kick">What MINOR Gains <span class="dot"></span> คุณค่าต่อธุรกิจ</div>
-   <h2 class="sec" style="margin-bottom:6px">เห็นความพร้อมของคน ก่อนตัดสินใจเรื่องสาขา</h2>
-   <div class="gain"><div class="gnum">01</div><div class="gh">Team readiness ที่มองเห็นได้</div><p>ประเมินความพร้อมทั้งทีมก่อนเปิด/ขยายสาขา ลดความเสี่ยงด้านคนตั้งแต่ต้น</p></div>
-   <div class="gain"><div class="gnum">02</div><div class="gh">วางแผนพัฒนาเชิงข้อมูล</div><p>ระบุผู้มีศักยภาพและ training need ได้เร็ว ลงทุนพัฒนาแบบตรงจุด</p></div>
-   <div class="gain"><div class="gnum">03</div><div class="gh">ยกระดับ guest experience</div><p>โดยเฉพาะความพร้อมภาษาอังกฤษเชิงบริการ ระดับแบรนด์</p></div>
-  </div>
-  <div class="ph"><img src="atmosphere2.jpg" alt="WOW reception"></div>
- </div>
-</div></section>
-
-<section class="atmo"><div class="abg" style="background-image:url(welcome.jpg)"></div><div class="aov" style="background:linear-gradient(rgba(8,40,35,.66),rgba(8,40,35,.78))"></div>
- <div class="at reveal"><div class="l">Ready when you are</div><h3>เริ่มเล็ก เห็นผลไว ขยายอย่างมีหลักฐาน</h3></div></section>
-
-<section class="onIv"><div class="wrap reveal">
- <div class="kick">30-Day Next Step <span class="dot"></span> ก้าวต่อไปใน 30 วัน</div>
- <h2 class="sec">แผนเริ่มต้นที่จับต้องได้</h2>
+<!-- 04 WHAT'S NEXT -->
+<section class="onIv2" id="next"><div class="wrap reveal">
+ <div class="kick">04 · What's Next <span class="dot"></span> ก้าวต่อไป</div>
+ <h2 class="sec">เริ่มเล็ก เห็นผลไว ขยายอย่างมีหลักฐาน</h2>
  <div class="tl">
-  <div class="ph"><div class="d">Week 1–2</div><h4>ยืนยันหลักฐาน</h4><ul><li>ทบทวนหลักฐานจาก L3 → L4</li><li>ยืนยันรายการที่ “needs confirmation”</li></ul></div>
-  <div class="ph"><div class="d">Week 3</div><h4>เริ่มภาษาอังกฤษกลุ่ม</h4><ul><li>จัดกลุ่มเริ่มต้น (Emerging ก่อน)</li><li>วัด baseline เชิงบริการ</li></ul></div>
-  <div class="ph"><div class="d">Week 4</div><h4>ขยายนำร่อง</h4><ul><li>เพิ่ม 1–2 สาขา</li><li>วางแผนเชื่อม CEFR ผ่าน TSPA × NIDA</li></ul></div>
+  <div class="ph3"><div class="d">Week 1–2</div><h4>ยืนยันหลักฐาน</h4><ul><li>ทบทวน L3 → L4</li><li>ยืนยันรายการ needs confirmation</li></ul></div>
+  <div class="ph3"><div class="d">Week 3</div><h4>เริ่มภาษาอังกฤษกลุ่ม</h4><ul><li>จัดกลุ่มเริ่มต้น (Emerging ก่อน)</li><li>วัด baseline เชิงบริการ</li></ul></div>
+  <div class="ph3"><div class="d">Week 4</div><h4>ขยายนำร่อง</h4><ul><li>เพิ่ม 1–2 สาขา</li><li>วางแผนเชื่อม CEFR (TSPA × NIDA)</li></ul></div>
  </div>
+ <div class="fb reveal"><div class="txt"><h3>อยากฟังความเห็นจาก MINOR</h3><p>มุมไหนที่อยากเห็นเพิ่ม · ข้อมูลใดที่ช่วยการตัดสินใจ · ทิศทางที่อยากให้เราพัฒนาต่อ — บอกเราได้เลย</p></div>
+  <a class="btn g" href="mailto:?subject=WOW%20Passport%20—%20Feedback%20%26%20Next%20Steps&body=ความเห็น/มุมที่อยากเห็นเพิ่ม:">แชร์ความเห็น →</a></div>
 </div></section>
 
 <section class="onEm final"><img class="cmp" src="compass.png" alt=""><div class="wrap reveal" style="position:relative;z-index:2">
  <img class="lk" src="logo_white.png" alt="WOW">
- <div class="gdiv"><i></i><b></b><i></i></div>
  <div class="brandline">EVIDENCE · DIRECTION · GROWTH · CARE</div>
  <h2 class="sec" style="max-width:760px;margin:0 auto 10px">พร้อมเดินทางต่อกับ MINOR</h2>
- <p class="lead" style="margin:0 auto 26px;color:#cfe0d8">เปิดดู Dashboard จริงทั้ง 4 มุมมอง — ข้อมูลจาก pilot รุ่นแรก</p>
+ <p class="lead" style="margin:0 auto 24px;color:#cfe0d8">เปิด Dashboard จริงทั้ง 4 มุมมอง — ข้อมูลจาก pilot รุ่นแรก</p>
  <div class="hbtns" style="justify-content:center">
-  <a class="btn g" href="individual.html">My Compass</a>
-  <a class="btn o" href="corporate.html">Team Compass</a>
-  <a class="btn o" href="hr.html">HR View</a>
-  <a class="btn o" href="review.html">Review Console</a>
+  <a class="btn g" href="individual.html">My Compass</a><a class="btn o" href="corporate.html">Team Compass</a><a class="btn o" href="hr.html">HR View</a><a class="btn o" href="review.html">Review Console</a>
  </div>
  <div class="note">เครื่องมือเชิงพัฒนา (developmental) — แสดง evidence readiness และ learning direction เพื่อการเติบโต ไม่ใช่ข้อสรุปขั้นสุดท้าย หรือการตัดสินเพื่อการจ้างงาน · ข้อมูลจาก Pilot รุ่นแรก มิถุนายน 2026</div>
 </div></section>
@@ -280,10 +247,10 @@ section{padding:88px 0}
 
 <script>
 const nav=document.getElementById('nav'),prog=document.getElementById('prog');
-function onscroll(){nav.classList.toggle('solid',scrollY>60);const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;prog.style.width=p+'%';}
-addEventListener('scroll',onscroll);onscroll();
-function countup(el){const t=+el.dataset.count;let n=0;const step=Math.max(1,Math.ceil(t/35));const id=setInterval(()=>{n+=step;if(n>=t){n=t;clearInterval(id);}el.textContent=n;},26);}
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll&&e.target.querySelectorAll('[data-count]').forEach(c=>{if(!c._d){c._d=1;countup(c);}});io.unobserve(e.target);}});},{threshold:.16});
+function os(){nav.classList.toggle('solid',scrollY>60);const h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';}
+addEventListener('scroll',os);os();
+function cu(el){const t=+el.dataset.count;let n=0;const s=Math.max(1,Math.ceil(t/35));const id=setInterval(()=>{n+=s;if(n>=t){n=t;clearInterval(id);}el.textContent=n;},26);}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll&&e.target.querySelectorAll('[data-count]').forEach(c=>{if(!c._d){c._d=1;cu(c);}});io.unobserve(e.target);}}),{threshold:.14});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body></html>
