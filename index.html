@@ -1,175 +1,247 @@
 <!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>WOW Passport — Wise of Wellness</title>
+<title>WOW Passport — Pilot Results for MINOR</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--em:#0D3B34;--em2:#0a2e28;--gold:#C6A052;--gold2:#d8b97a;--ivory:#F6F2EB;--sage:#A7B49A;--ink:#2B2B2B}
+:root{--em:#0D3B34;--em2:#0a2e28;--gold:#C6A052;--gold2:#d8b97a;--ivory:#F6F2EB;--ivory2:#efe7d9;--sage:#A7B49A;--sage2:#e7eee4;--ink:#2B2B2B;--mut:#6f6a5c;--line:#E6E0D4;--card:#fffdf9}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter','Sarabun',-apple-system,'Segoe UI',Tahoma,sans-serif;color:#fff;background:var(--em);-webkit-font-smoothing:antialiased;scroll-snap-type:y proximity;overflow-x:hidden}
-.slide{min-height:560px;scroll-snap-align:start;display:flex;align-items:center;position:relative;overflow:hidden}
-.slide.tall{min-height:100vh}
-.bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
-.ov{position:absolute;inset:0;z-index:1;background:linear-gradient(95deg,rgba(8,40,35,.95) 0%,rgba(8,40,35,.74) 44%,rgba(8,40,35,.34) 100%)}
-.ov.full{background:linear-gradient(120deg,#0a2e28,#0D3B34 60%,#123f37)}
-.inner{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:52px 44px;width:100%}
-.kick{font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-bottom:13px}
-.slide h2{font-size:30px;font-weight:800;line-height:1.16;max-width:680px;letter-spacing:.2px}
-.slide h2 .g{color:var(--gold2)}
-.lead{font-size:15.5px;line-height:1.62;color:#dce7e1;max-width:600px;margin-top:14px}
-.pts{margin-top:18px;max-width:620px;display:flex;flex-direction:column;gap:9px}
-.pt{display:flex;gap:11px;align-items:flex-start;font-size:14px;line-height:1.5;color:#e7efea}
-.pt b{color:#fff}.pt .d{color:var(--gold2);font-weight:800;flex-shrink:0}
-.compassdec{position:absolute;right:-70px;top:50%;transform:translateY(-50%);width:430px;opacity:.42;z-index:1;pointer-events:none}
-/* cover */
-.cover .lock{height:118px;margin-bottom:18px}
-.cover .pass{font-size:15px;letter-spacing:8px;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-bottom:4px}
-.cover .tl{font-size:16px;color:#dce7e1;margin-top:12px;max-width:500px;line-height:1.6}
-.scrollhint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;color:#cbe0d6;font-size:11px;letter-spacing:2px;text-align:center}
-.scrollhint .a{font-size:20px;display:block;margin-top:3px;animation:bob 1.6s infinite}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-.cta{display:inline-block;margin-top:22px;background:var(--gold);color:#1a1a1a;text-decoration:none;font-weight:800;font-size:13.5px;padding:12px 22px;border-radius:30px}
-.cta:hover{background:var(--gold2)}
-/* trust ladder */
-.ladder{display:flex;gap:0;margin-top:22px;max-width:880px;flex-wrap:wrap}
-.rung{flex:1;min-width:140px;background:rgba(255,255,255,.06);border:1px solid rgba(198,160,82,.25);border-radius:11px;padding:13px 12px;margin:4px}
-.rung .n{font-size:10.5px;font-weight:800;color:var(--gold2)}
-.rung .t{font-size:12.5px;font-weight:700;margin-top:4px;line-height:1.3}
-.rung .by{font-size:10.5px;color:#aebfb7;margin-top:5px}
-/* explore views (ivory) */
-.views{background:var(--ivory);color:var(--ink)}
-.views .inner{max-width:1140px}.views h2{color:var(--em)}
-.vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:24px}
-.vcard{background:#fff;border:1px solid #e6dfd0;border-radius:14px;overflow:hidden;box-shadow:0 8px 22px rgba(13,59,52,.08);display:flex;flex-direction:column;transition:.18s}
-.vcard:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(13,59,52,.14)}
-.vcard .ph{height:96px;background-size:cover;background-position:center}
-.vcard .bd{padding:13px 14px 15px;display:flex;flex-direction:column;flex:1}
-.vcard h3{font-size:15px;color:var(--em);font-weight:800}
-.vcard .role{font-size:10px;letter-spacing:1.1px;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-top:2px}
-.vcard p{font-size:11.5px;color:#4a544d;line-height:1.5;margin:8px 0 12px;flex:1}
-.vbtn{text-align:center;background:var(--em);color:#fff;text-decoration:none;border-radius:9px;padding:9px;font-size:12px;font-weight:700}
-.vbtn:hover{background:var(--em2)}
-.kpis{display:flex;gap:13px;margin-top:22px;flex-wrap:wrap}
-.kpi{background:rgba(255,255,255,.07);border:1px solid rgba(198,160,82,.22);border-radius:12px;padding:14px 20px;min-width:140px}
-.kpi .n{font-size:28px;font-weight:800;color:var(--gold2)}
-.kpi .l{font-size:11.5px;color:#cdded6;margin-top:3px}
-.timeline{display:flex;gap:13px;margin-top:22px;flex-wrap:wrap}
-.phase{flex:1;min-width:180px;background:rgba(255,255,255,.06);border:1px solid rgba(198,160,82,.22);border-radius:12px;padding:16px}
-.phase .ph{font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);font-weight:800}
-.phase ul{margin:9px 0 0;padding-left:15px;font-size:12.5px;line-height:1.65;color:#dce7e1}
-.brandline{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;color:var(--gold2);font-weight:800;font-size:13px;letter-spacing:2.5px;margin:18px 0 16px}
-.closing{text-align:center}.closing .inner{text-align:center}
-.closing .lock{height:110px;margin-bottom:6px}
-.disc2{font-size:11px;color:#9fb3aa;margin-top:18px;line-height:1.55}
-.dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:30;display:flex;flex-direction:column;gap:10px}
-.dots a{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.5);display:block}
-.dots a:hover{background:var(--gold)}
-.topbar{position:fixed;top:0;left:0;right:0;z-index:25;display:flex;align-items:center;gap:9px;padding:10px 20px;background:linear-gradient(180deg,rgba(8,40,35,.72),transparent)}
-.topbar img{height:30px}.topbar .nm{font-weight:800;font-size:13.5px;letter-spacing:.3px}
-.topbar .sp{flex:1}
-.topbar a.jump{color:#fff;text-decoration:none;font-size:11.5px;font-weight:700;background:rgba(255,255,255,.15);padding:6px 13px;border-radius:18px}
-.topbar a.jump:hover{background:var(--gold);color:#1a1a1a}
-@media(max-width:860px){.slide h2{font-size:25px}.vgrid{grid-template-columns:1fr 1fr}.compassdec{display:none}.dots{display:none}.inner{padding:80px 24px 48px}.cover .lock{height:92px}}
-@media(max-width:520px){.vgrid{grid-template-columns:1fr}}
+body{font-family:'Inter','Sarabun',-apple-system,'Segoe UI',Tahoma,sans-serif;color:var(--ink);background:var(--ivory);-webkit-font-smoothing:antialiased;line-height:1.6}
+img{display:block;max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.kick{font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px}
+.dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--gold);margin:0 3px 3px}
+h2.sec{font-size:30px;font-weight:800;color:var(--em);letter-spacing:.2px;line-height:1.18;margin-bottom:8px}
+.lead{font-size:16px;color:var(--mut);max-width:680px;margin-bottom:30px}
+section{padding:84px 0}
+section.tight{padding:64px 0}
+.onIv{background:var(--ivory)} .onIv2{background:var(--ivory2)} .onEm{background:var(--em);color:#fff}
+.onEm h2.sec{color:#fff} .onEm .kick{color:var(--gold2)} .onEm .lead{color:#cfe0d8}
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;gap:10px;padding:12px 28px;background:rgba(10,46,40,.0);transition:.3s}
+.nav.solid{background:rgba(9,46,51,.96);box-shadow:0 2px 18px rgba(0,0,0,.16)}
+.nav img{height:30px}.nav .nm{color:#fff;font-weight:800;font-size:14px;letter-spacing:.3px}.nav .sp{flex:1}
+.nav a.cta{color:#1a1a1a;background:var(--gold);text-decoration:none;font-size:12.5px;font-weight:800;padding:8px 16px;border-radius:22px}
+.nav a.cta:hover{background:var(--gold2)}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(120deg,#0a2e28,#0D3B34 58%,#13463a);color:#fff}
+.hero .bg{position:absolute;inset:0;background:url(cover.jpg) center/cover;opacity:.18}
+.hero .cmp{position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:620px;opacity:.4;pointer-events:none}
+.hero .inner{position:relative;z-index:2}
+.hero img.lk{height:118px;margin-bottom:22px}
+.hero .pass{font-size:16px;letter-spacing:9px;text-transform:uppercase;color:var(--gold2);font-weight:700}
+.hero h1{font-size:46px;font-weight:800;margin:14px 0 8px;line-height:1.1;max-width:680px}
+.hero p{font-size:18px;color:#dce7e1;max-width:560px;margin-bottom:8px}
+.hero .meta{font-size:13px;color:var(--sage);letter-spacing:1px;margin-top:18px}
+.hbtns{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:800;font-size:14px;padding:13px 24px;border-radius:30px}
+.btn.g{background:var(--gold);color:#1a1a1a}.btn.g:hover{background:var(--gold2)}
+.btn.o{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}.btn.o:hover{border-color:var(--gold2);color:var(--gold2)}
+.scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:#bcd0c7;font-size:11px;letter-spacing:2px;text-align:center;z-index:2}
+.scrollcue span{display:block;font-size:20px;animation:bob 1.6s infinite}@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+/* kpi */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 20px;box-shadow:0 8px 24px rgba(13,59,52,.05)}
+.kpi .n{font-size:34px;font-weight:800;color:var(--em)}.kpi.gd .n{color:var(--gold)}
+.kpi .l{font-size:12.5px;color:var(--mut);margin-top:4px}
+/* generic cards */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cards2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px;box-shadow:0 8px 26px rgba(13,59,52,.06)}
+.onEm .card{background:rgba(255,255,255,.05);border-color:rgba(198,160,82,.25)}
+.card .ic{width:46px;height:46px;border-radius:13px;background:var(--sage2);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
+.onEm .card .ic{background:rgba(198,160,82,.16)}
+.card h3{font-size:18px;font-weight:800;color:var(--em);margin-bottom:6px}.onEm .card h3{color:#fff}
+.card p{font-size:14px;color:var(--mut);line-height:1.6}.onEm .card p{color:#cfe0d8}
+/* ladder */
+.ladder{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.rung{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 15px;position:relative}
+.rung.cur{background:var(--em);border-color:var(--em)}
+.rung .lv{font-size:10.5px;font-weight:800;letter-spacing:1px;color:var(--gold)}
+.rung.cur .lv{color:var(--gold2)}
+.rung .t{font-size:14.5px;font-weight:700;color:var(--em);margin-top:5px}.rung.cur .t{color:#fff}
+.rung .by{font-size:11.5px;color:var(--mut);margin-top:6px}.rung.cur .by{color:#bcd0c7}
+.flowbar{height:6px;border-radius:4px;background:linear-gradient(90deg,var(--sage),var(--gold) 60%,var(--em));margin:26px 0 10px}
+/* preview split */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+.split.rev{grid-template-columns:.95fr 1.05fr}
+.split .ph{border-radius:18px;overflow:hidden;box-shadow:0 14px 34px rgba(13,59,52,.14);border:1px solid var(--line)}
+.split .ph img{width:100%;height:320px;object-fit:cover}
+.feat{list-style:none;margin:16px 0 22px}
+.feat li{font-size:14.5px;color:var(--ink);padding:7px 0 7px 22px;position:relative;border-top:1px dashed var(--line)}
+.feat li:first-child{border-top:0}.feat li:before{content:'';position:absolute;left:2px;top:15px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.onEm .feat li{color:#e7efea;border-color:rgba(255,255,255,.12)}
+.linkb{display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:var(--em);color:#fff;font-weight:700;font-size:13.5px;padding:11px 20px;border-radius:11px}
+.linkb:hover{background:var(--em2)} .onEm .linkb{background:var(--gold);color:#1a1a1a}
+/* gains */
+.gains{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gain{padding:4px}
+.gain .gh{font-size:16px;font-weight:800;color:var(--em);margin:8px 0 5px}.onEm .gain .gh{color:#fff}
+.gain p{font-size:13.5px;color:var(--mut);line-height:1.55}.onEm .gain p{color:#cfe0d8}
+.gnum{font-size:13px;font-weight:800;color:var(--gold);letter-spacing:1px}
+/* timeline 30day */
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.tl .ph{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 8px 22px rgba(13,59,52,.05)}
+.tl .ph .d{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:800}
+.tl .ph h4{font-size:17px;color:var(--em);margin:6px 0 10px}
+.tl .ph ul{margin:0;padding-left:17px;font-size:13.5px;color:var(--mut);line-height:1.7}
+/* final cta */
+.final{text-align:center;position:relative;overflow:hidden}
+.final .cmp{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:540px;opacity:.16;pointer-events:none}
+.final img.lk{height:78px;margin:0 auto 18px}
+.brandline{color:var(--gold2);font-weight:800;font-size:14px;letter-spacing:3px;margin:14px 0 8px}
+.note{font-size:11.5px;color:#9fb3aa;max-width:680px;margin:20px auto 0;line-height:1.6}
+.foot{background:var(--em2);color:#9fb3aa;font-size:12px;text-align:center;padding:22px}
+@media(max-width:840px){.kpis,.cards3,.gains,.tl{grid-template-columns:1fr 1fr}.split,.split.rev{grid-template-columns:1fr}.hero h1{font-size:34px}.hero .cmp{display:none}.cards2{grid-template-columns:1fr}}
+@media(max-width:520px){.kpis,.cards3,.gains,.tl{grid-template-columns:1fr}}
 </style></head><body>
 
-<div class="topbar"><img src="logo_mark.png" alt="WOW"><span class="nm">WOW Passport</span><span class="sp"></span><a class="jump" href="#views">ดู Dashboard →</a></div>
+<div class="nav" id="nav"><img src="logo_mark.png" alt="WOW"><span class="nm">WOW Passport</span><span class="sp"></span><a class="cta" href="individual.html">Open Live Compass →</a></div>
 
-<nav class="dots">
-<a href="#cover"></a><a href="#challenge"></a><a href="#concept"></a><a href="#trust"></a><a href="#views"></a><a href="#pilot"></a><a href="#insight"></a><a href="#value"></a><a href="#next"></a><a href="#close"></a>
-</nav>
+<!-- HERO -->
+<header class="hero">
+ <div class="bg"></div><img class="cmp" src="compass.png" alt="">
+ <div class="wrap inner">
+  <img class="lk" src="logo_white.png" alt="WOW · Wise of Wellness">
+  <div class="pass">Passport</div>
+  <h1>Wellness intelligence that guides growth</h1>
+  <p>ผลการศึกษานำร่องของระบบทบทวนหลักฐานและสมรรถนะเชิงพัฒนา สำหรับบุคลากรสปา</p>
+  <div class="meta">PILOT RESULTS · PREPARED FOR MINOR · THAI SPA ASSOCIATION · JUNE 2026</div>
+  <div class="hbtns"><a class="btn g" href="#snapshot">ดูผลนำร่อง ↓</a><a class="btn o" href="individual.html">เปิด Compass จริง</a></div>
+ </div>
+ <div class="scrollcue">เลื่อนลง<span>↓</span></div>
+</header>
 
-<section class="slide tall cover" id="cover"><div class="bg" style="background-image:url(cover.jpg)"></div><div class="ov"></div>
-<img class="compassdec" src="compass.png" alt="">
-<div class="inner"><img class="lock" src="logo_white.png" alt="WOW · Wise of Wellness">
-<div class="pass">Passport</div>
-<div class="tl">Wellness intelligence that guides growth — ระบบทบทวนหลักฐานและสมรรถนะเชิงพัฒนาสำหรับผู้ประกอบวิชาชีพสปา</div>
-<a class="cta" href="#challenge">เริ่มนำเสนอ →</a></div>
-<div class="scrollhint">เลื่อนลง<span class="a">↓</span></div></section>
+<!-- PILOT SNAPSHOT -->
+<section class="onIv" id="snapshot"><div class="wrap">
+ <div class="kick">Pilot Snapshot <span class="dot"></span> ภาพรวมนำร่อง</div>
+ <h2 class="sec">ทดลองจริงกับบุคลากร 6 ท่าน 2 สาขา</h2>
+ <p class="lead">เก็บหลักฐานจาก 3 แหล่ง แล้วประมวลเป็นภาพความพร้อมและทิศทางการเรียนรู้ (learning direction) ของแต่ละคนและของทีม</p>
+ <div class="kpis">
+  <div class="kpi"><div class="n">6</div><div class="l">ผู้เข้าร่วม · 2 สาขา</div></div>
+  <div class="kpi gd"><div class="n">31</div><div class="l">รายการหลักฐาน (เอกสาร 25 + เสียง 6)</div></div>
+  <div class="kpi"><div class="n">3·2·1</div><div class="l">English readiness · Ready / Developing / Emerging</div></div>
+  <div class="kpi gd"><div class="n">2+1</div><div class="l">ผู้นำปัจจุบัน + ผู้แสดงความสนใจเป็นผู้นำ</div></div>
+ </div>
+</div></section>
 
-<section class="slide" id="challenge"><div class="bg" style="background-image:url(welcome.jpg)"></div><div class="ov"></div>
-<div class="inner"><div class="kick">The Challenge · โจทย์</div>
-<h2>การวัด <span class="g">"ความพร้อมของคน"</span> ในธุรกิจสปา ยังกระจัดกระจาย</h2>
-<div class="pts">
-<div class="pt"><span class="d">·</span><div>ทักษะ ใบอนุญาต ภาษา ประสบการณ์ <b>อยู่คนละที่</b> — ประเมินทั้งทีมได้ยาก</div></div>
-<div class="pt"><span class="d">·</span><div>องค์กรต้องเห็น <b>team readiness</b> ก่อนเปิด/ขยายสาขา และวางแผนพัฒนาคน</div></div>
-<div class="pt"><span class="d">·</span><div>ต้องการมุมมองที่ <b>ทั้งพนักงาน องค์กร และ HR</b> เข้าใจร่วมกัน</div></div>
-</div></div></section>
+<!-- WHAT WE TESTED -->
+<section class="onIv2"><div class="wrap">
+ <div class="kick">What We Tested <span class="dot"></span> สิ่งที่เราทดสอบ</div>
+ <h2 class="sec">รวมหลักฐาน 3 แหล่งให้เห็นภาพคนอย่างเป็นธรรม</h2>
+ <p class="lead">ไม่ใช่ข้อสรุปขั้นสุดท้าย แต่เป็นการสะท้อนเชิงพัฒนา ที่ทั้งพนักงาน องค์กร และ HR เข้าใจร่วมกัน</p>
+ <div class="cards3">
+  <div class="card"><div class="ic">📄</div><h3>Evidence</h3><p>เอกสาร ใบอนุญาต และใบรับรอง — หลักฐานที่จับต้องได้ ตรวจการมีอยู่ด้วย OCR แม้สแกนรวมไฟล์</p></div>
+  <div class="card"><div class="ic">🎙</div><h3>Voice</h3><p>ตัวอย่างเสียงการแนะนำตัวและตอบคำถาม เพื่อสังเกตการสื่อสารและความพร้อมภาษาอังกฤษเชิงบริการ</p></div>
+  <div class="card"><div class="ic">📝</div><h3>Self-report</h3><p>มุมมองและเป้าหมายที่เจ้าตัวสะท้อนเอง ประกอบการอ่านบริบทของแต่ละคน</p></div>
+ </div>
+</div></section>
 
-<section class="slide" id="concept"><div class="bg" style="background-image:url(care.jpg)"></div><div class="ov"></div>
-<div class="inner"><div class="kick">The Concept · แนวคิด</div>
-<h2>"สมุดพก + เข็มทิศ" <span class="g">Passport + Compass</span></h2>
-<div class="lead">ระบบ <b>เชิงพัฒนา (developmental)</b> — ไม่ใช่สอบผ่าน/ไม่ผ่าน รวมหลักฐาน 3 แหล่งให้เห็นภาพคนอย่างเป็นธรรม</div>
-<div class="pts">
-<div class="pt"><span class="d">📄</span><div><b>Evidence</b> — เอกสาร ใบอนุญาต ใบรับรอง</div></div>
-<div class="pt"><span class="d">🎙</span><div><b>Voice</b> — การสื่อสาร + ความพร้อมภาษาอังกฤษจากเสียงจริง</div></div>
-<div class="pt"><span class="d">📝</span><div><b>Self-report</b> — มุมมองและเป้าหมายที่เจ้าตัวสะท้อนเอง</div></div>
-</div></div></section>
+<!-- EVIDENCE FLOW RESULT -->
+<section class="onIv"><div class="wrap">
+ <div class="kick">Evidence Flow Result <span class="dot"></span> เส้นทางความเชื่อมั่น</div>
+ <h2 class="sec">Trust Pathway — หลักฐานไล่ระดับความเชื่อมั่น 5 ขั้น</h2>
+ <p class="lead">AI ช่วยจัดเรียงและประเมินความเกี่ยวข้องได้ถึงขั้น 3 — ขั้นสูงกว่านั้นรอการยืนยันโดยคน (needs confirmation) ในนำร่องนี้หลักฐานส่วนใหญ่อยู่ที่ขั้น “AI Relevant” พร้อมเข้าสู่การทบทวน</p>
+ <div class="ladder">
+  <div class="rung"><div class="lv">LEVEL 1</div><div class="t">Uploaded</div><div class="by">อัปโหลดไฟล์</div></div>
+  <div class="rung"><div class="lv">LEVEL 2</div><div class="t">Extracted</div><div class="by">AI อ่านข้อมูล</div></div>
+  <div class="rung cur"><div class="lv">LEVEL 3</div><div class="t">AI Relevant</div><div class="by">จุดที่ทีมนำร่องอยู่ตอนนี้</div></div>
+  <div class="rung"><div class="lv">LEVEL 4</div><div class="t">WOW Reviewed</div><div class="by">ผู้ทบทวนยืนยัน</div></div>
+  <div class="rung"><div class="lv">LEVEL 5</div><div class="t">Source Verified</div><div class="by">ต้นสังกัด/แหล่งยืนยัน</div></div>
+ </div>
+ <div class="flowbar"></div>
+ <p class="lead" style="margin:0">ความโปร่งใสนี้ทำให้เห็นชัดว่า อะไรพร้อมแล้ว และอะไร “ยังต้องการการยืนยัน” ก่อนนำไปใช้ตัดสินใจ</p>
+</div></section>
 
-<section class="slide" id="trust"><div class="ov full"></div><img class="compassdec" src="compass.png" alt="">
-<div class="inner"><div class="kick">How it works · Trust Ladder</div>
-<h2>ความเชื่อมั่นของหลักฐาน <span class="g">ไล่เป็น 5 ขั้น</span></h2>
-<div class="lead">AI ช่วยได้ถึง Level 3 — คนเป็นผู้รับรองขั้นสูง โปร่งใส ตรวจสอบได้</div>
-<div class="ladder">
-<div class="rung"><div class="n">LEVEL 1</div><div class="t">Uploaded</div><div class="by">อัปโหลดไฟล์</div></div>
-<div class="rung"><div class="n">LEVEL 2</div><div class="t">Extracted</div><div class="by">AI อ่านข้อมูล</div></div>
-<div class="rung"><div class="n">LEVEL 3</div><div class="t">AI Relevant</div><div class="by">AI ประเมินความเกี่ยวข้อง</div></div>
-<div class="rung"><div class="n">LEVEL 4</div><div class="t">WOW Reviewed</div><div class="by">ผู้รีวิวรับรอง</div></div>
-<div class="rung"><div class="n">LEVEL 5</div><div class="t">Source Verified</div><div class="by">ต้นสังกัด/แหล่งยืนยัน</div></div>
-</div></div></section>
+<!-- INDIVIDUAL COMPASS PREVIEW -->
+<section class="onIv2"><div class="wrap">
+ <div class="split">
+  <div>
+   <div class="kick">Individual Compass <span class="dot"></span> มุมพนักงาน</div>
+   <h2 class="sec">เข็มทิศส่วนตัว ที่แต่ละคนเห็นการเติบโตของตัวเอง</h2>
+   <ul class="feat">
+    <li>Personal Compass — จุดแข็งจากจำนวนหลักฐานจริงในแต่ละกลุ่มทักษะ</li>
+    <li>English Service Readiness — อ่านจากเสียงจริง</li>
+    <li>“What is becoming clear” และ “Still taking shape” แทนการตัดสิน</li>
+    <li>My Evidence Passport — หลักฐานเป็นการ์ดที่สะท้อนสมรรถนะ</li>
+   </ul>
+   <a class="linkb" href="individual.html">เปิด My Compass View →</a>
+  </div>
+  <div class="ph"><img src="individual.jpg" alt="Individual Compass"></div>
+ </div>
+</div></section>
 
-<section class="slide views" id="views"><div class="inner"><div class="kick" style="color:var(--gold2)">Explore the Live Dashboards</div>
-<h2>4 มุมมอง · เปิดดูข้อมูลจริงได้ทันที</h2>
-<div class="vgrid">
-<div class="vcard"><div class="ph" style="background-image:url(individual.jpg)"></div><div class="bd"><h3>Individual</h3><div class="role">มุมพนักงาน</div><p>Competency Compass · จุดแข็ง/จุดพัฒนา · สิ่งที่เอกสาร/คำตอบสะท้อน · โปรไฟล์เต็มสำหรับผู้มี CV</p><a class="vbtn" href="individual.html">เปิด →</a></div></div>
-<div class="vcard"><div class="ph" style="background-image:url(corporate.jpg)"></div><div class="bd"><h3>Corporate</h3><div class="role">มุมองค์กร</div><p>ภาพรวมทีม · เทียบรายสาขา · Competency รายตำแหน่ง · ใครมีศักยภาพ/ต้องสนับสนุน</p><a class="vbtn" href="corporate.html">เปิด →</a></div></div>
-<div class="vcard"><div class="ph" style="background-image:url(hr.jpg)"></div><div class="bd"><h3>HR</h3><div class="role">มุมฝ่ายบุคคล</div><p>Training Needs · Leadership pipeline · Team Competency · ข้อเสนอแนะรายบุคคล</p><a class="vbtn" href="hr.html">เปิด →</a></div></div>
-<div class="vcard"><div class="ph" style="background-image:url(review.jpg)"></div><div class="bd"><h3>Review Console</h3><div class="role">มุมผู้รีวิว</div><p>ตรวจหลักฐาน · เลื่อนระดับ Trust Ladder · รีวิวเสียง · ฐานข้อมูล Issuer · Export</p><a class="vbtn" href="review.html">เปิด →</a></div></div>
-</div></div></section>
+<!-- TEAM COMPASS PREVIEW -->
+<section class="onEm"><div class="wrap">
+ <div class="split rev">
+  <div class="ph"><img src="corporate.jpg" alt="Team Compass"></div>
+  <div>
+   <div class="kick">Team Compass <span class="dot"></span> มุมองค์กร</div>
+   <h2 class="sec">ภาพรวมทีม เทียบรายสาขาและรายตำแหน่ง</h2>
+   <ul class="feat">
+    <li>ความพร้อมเฉลี่ยของทีม และการกระจายระดับภาษา</li>
+    <li>Competency รายตำแหน่ง — Manager เด่นบริหาร/องค์รวม · Therapist เด่นงานนวด</li>
+    <li>ใครมีศักยภาพ · ใครต้องการการสนับสนุน</li>
+    <li>Skill set ของทีมในภาพเดียว</li>
+   </ul>
+   <a class="linkb" href="corporate.html">เปิด Team Compass →</a>
+  </div>
+ </div>
+</div></section>
 
-<section class="slide" id="pilot"><div class="bg" style="background-image:url(review.jpg)"></div><div class="ov"></div>
-<div class="inner"><div class="kick">Pilot Snapshot · ผลนำร่อง</div>
-<h2>นำร่อง <span class="g">6 คน · 2 สาขา</span></h2>
-<div class="kpis">
-<div class="kpi"><div class="n">6</div><div class="l">ผู้เข้าร่วม · 2 สาขา</div></div>
-<div class="kpi"><div class="n">3·2·1</div><div class="l">English Ready · Developing · Emerging</div></div>
-<div class="kpi"><div class="n">2+1</div><div class="l">ผู้นำปัจจุบัน + สนใจเป็นผู้นำ</div></div>
-<div class="kpi"><div class="n">31</div><div class="l">รายการหลักฐาน + Voice 6 คน</div></div>
-</div></div></section>
+<!-- HR / REVIEW WORKFLOW -->
+<section class="onIv"><div class="wrap">
+ <div class="kick">HR &amp; Review Workflow <span class="dot"></span> มุมพัฒนาคนและการทบทวน</div>
+ <h2 class="sec">จากภาพรวม สู่การลงมือพัฒนาและยืนยันหลักฐาน</h2>
+ <div class="cards2">
+  <div class="card"><div class="ic">🧭</div><h3>HR — Development &amp; Verification</h3><p>Training needs ของทีม (ภาษาอังกฤษเป็นธีมหลัก) · Leadership pipeline · ข้อเสนอแนะการพัฒนารายบุคคล</p>
+   <div style="margin-top:16px"><a class="linkb" href="hr.html">เปิด HR View →</a></div></div>
+  <div class="card"><div class="ic">🔎</div><h3>Evidence Review Console</h3><p>เครื่องมือปฏิบัติการ — ทบทวนหลักฐานทีละชิ้น เลื่อนระดับ Trust Pathway รีวิวเสียง และจัดการฐานข้อมูลผู้ออกเอกสาร</p>
+   <div style="margin-top:16px"><a class="linkb" href="review.html">เปิด Review Console →</a></div></div>
+ </div>
+</div></section>
 
-<section class="slide" id="insight"><div class="bg" style="background-image:url(team.jpg)"></div><div class="ov"></div>
-<div class="inner"><div class="kick">Key Insight · ข้อค้นพบ</div>
-<h2>ภาษาอังกฤษคือ <span class="g">lever รวมศูนย์</span></h2>
-<div class="pts">
-<div class="pt"><span class="d">·</span><div>หลายคนชี้เรื่องเดียวกัน → <b>ลงทุนแบบกลุ่มคุ้มกว่า</b>จัดทีละคน</div></div>
-<div class="pt"><span class="d">·</span><div><b>Manager</b> แข็งบริหาร/องค์รวม · <b>Therapist</b> แข็งงานนวด — จุดแข็งต่างตามบทบาท</div></div>
-<div class="pt"><span class="d">·</span><div>จัดลำดับการพัฒนาแบบ <b>มีหลักฐาน</b> ไม่ใช่ความรู้สึก</div></div>
-</div></div></section>
+<!-- WHAT MINOR GAINS -->
+<section class="onIv2"><div class="wrap">
+ <div class="kick">What MINOR Gains <span class="dot"></span> คุณค่าต่อธุรกิจ</div>
+ <h2 class="sec">เห็นความพร้อมของคน ก่อนตัดสินใจเรื่องสาขา</h2>
+ <div class="gains">
+  <div class="gain"><div class="gnum">01</div><div class="gh">Team readiness ที่มองเห็นได้</div><p>ประเมินความพร้อมทั้งทีมก่อนเปิด/ขยายสาขา ลดความเสี่ยงด้านคนตั้งแต่ต้น</p></div>
+  <div class="gain"><div class="gnum">02</div><div class="gh">วางแผนพัฒนาเชิงข้อมูล</div><p>ระบุผู้มีศักยภาพและ training need ได้เร็ว ลงทุนพัฒนาแบบตรงจุด</p></div>
+  <div class="gain"><div class="gnum">03</div><div class="gh">ยกระดับ guest experience</div><p>โดยเฉพาะความพร้อมภาษาอังกฤษเชิงบริการ ระดับแบรนด์</p></div>
+ </div>
+</div></section>
 
-<section class="slide" id="value"><div class="bg" style="background-image:url(corporate.jpg)"></div><div class="ov"></div>
-<div class="inner"><div class="kick">Why it matters · คุณค่า</div>
-<h2>คุณค่าต่อ <span class="g">ธุรกิจ</span></h2>
-<div class="pts">
-<div class="pt"><span class="d">·</span><div>เห็น <b>team readiness</b> ก่อนเปิด/ขยายสาขา → ลดความเสี่ยงด้านคน</div></div>
-<div class="pt"><span class="d">·</span><div>วางแผนพัฒนาคน <b>เชิงข้อมูล</b> · ระบุ high-potential + training need ได้เร็ว</div></div>
-<div class="pt"><span class="d">·</span><div>ยกระดับ <b>guest experience</b> ระดับแบรนด์ (โดยเฉพาะภาษาอังกฤษ)</div></div>
-</div></div></section>
+<!-- 30-DAY NEXT STEP -->
+<section class="onIv"><div class="wrap">
+ <div class="kick">30-Day Next Step <span class="dot"></span> ก้าวต่อไปใน 30 วัน</div>
+ <h2 class="sec">เริ่มเล็ก เห็นผลไว ขยายอย่างมีหลักฐาน</h2>
+ <div class="tl">
+  <div class="ph"><div class="d">Week 1–2</div><h4>ยืนยันหลักฐาน</h4><ul><li>ทบทวนหลักฐานจาก L3 → L4</li><li>ยืนยันรายการที่ “needs confirmation”</li></ul></div>
+  <div class="ph"><div class="d">Week 3</div><h4>เริ่มภาษาอังกฤษกลุ่ม</h4><ul><li>จัดกลุ่มเริ่มต้น (Emerging ก่อน)</li><li>วัด baseline เชิงบริการ</li></ul></div>
+  <div class="ph"><div class="d">Week 4</div><h4>ขยายนำร่อง</h4><ul><li>เพิ่ม 1–2 สาขา</li><li>วางแผนเชื่อม CEFR ผ่าน TSPA × NIDA</li></ul></div>
+ </div>
+</div></section>
 
-<section class="slide" id="next"><div class="ov full"></div><img class="compassdec" src="compass.png" alt="">
-<div class="inner"><div class="kick">Next Steps · ก้าวต่อไป</div>
-<h2>จาก Pilot สู่ <span class="g">การใช้งานจริง</span></h2>
-<div class="timeline">
-<div class="phase"><div class="ph">Now</div><ul><li>ขยาย pilot ไปสาขาอื่น</li><li>เก็บข้อมูลเพิ่ม</li></ul></div>
-<div class="phase"><div class="ph">Next</div><ul><li>เชื่อม SpeechAce / CEFR</li><li>ผ่าน MOU TSPA × NIDA</li></ul></div>
-<div class="phase"><div class="ph">Later</div><ul><li>Roll-out dashboard</li><li>ให้ HR/Operations ใช้จริง</li></ul></div>
-</div></div></section>
+<!-- FINAL CTA -->
+<section class="onEm final"><img class="cmp" src="compass.png" alt=""><div class="wrap" style="position:relative;z-index:2">
+ <img class="lk" src="logo_white.png" alt="WOW">
+ <div class="brandline">EVIDENCE · DIRECTION · GROWTH · CARE</div>
+ <h2 class="sec" style="max-width:760px;margin:0 auto 10px">พร้อมเดินทางต่อกับ MINOR</h2>
+ <p class="lead" style="margin:0 auto 26px;color:#cfe0d8">เปิดดู Dashboard จริงทั้ง 4 มุมมอง — ข้อมูลจาก pilot รุ่นแรก</p>
+ <div class="hbtns" style="justify-content:center">
+  <a class="btn g" href="individual.html">My Compass</a>
+  <a class="btn o" href="corporate.html">Team Compass</a>
+  <a class="btn o" href="hr.html">HR View</a>
+  <a class="btn o" href="review.html">Review Console</a>
+ </div>
+ <div class="note">เครื่องมือเชิงพัฒนา (developmental) — แสดง evidence readiness และ learning direction เพื่อการเติบโต ไม่ใช่ข้อสรุปขั้นสุดท้าย หรือการตัดสินเพื่อการจ้างงาน · ข้อมูลจาก Pilot รุ่นแรก มิถุนายน 2026</div>
+</div></section>
 
-<section class="slide tall closing" id="close"><div class="ov full"></div><img class="compassdec" src="compass.png" alt="" style="left:50%;transform:translate(-50%,-50%);opacity:.26;width:560px">
-<div class="inner"><img class="lock" src="logo_white.png" alt="WOW · Wise of Wellness">
-<div class="brandline"><span>EVIDENCE</span><span>·</span><span>DIRECTION</span><span>·</span><span>GROWTH</span><span>·</span><span>CARE</span></div>
-<div class="lead" style="margin:0 auto;color:#dce7e1">WOW Passport · Thai Spa Association</div>
-<div style="margin-top:14px;font-size:13.5px;color:#cdded6">Sunai Wachirawarakarn — President, TSPA</div>
-<a class="cta" href="#views" style="margin-top:20px">เปิดดู Dashboard ทั้ง 4 →</a>
-<div class="disc2">เครื่องมือเชิงพัฒนา (developmental) — ไม่ใช่การสอบผ่าน/ไม่ผ่าน หรือการรับรองอย่างเป็นทางการ · ข้อมูลจาก Pilot รุ่นแรก</div></div></section>
+<div class="foot">WOW Passport · Wise of Wellness · Thai Spa Association · Sunai Wachirawarakarn, President</div>
 
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>{nav.classList.toggle('solid',scrollY>60);});
+</script>
 </body></html>
