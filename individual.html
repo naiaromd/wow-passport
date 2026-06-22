@@ -57,14 +57,20 @@ body{font-family:'Inter','Sarabun',-apple-system,'Segoe UI',Tahoma,sans-serif;ba
 @media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.exRow{grid-template-columns:1fr}.chart2{grid-template-columns:1fr}}
 
 
-.phero{position:relative;overflow:hidden;background:linear-gradient(125deg,#0a2e28,#0D3B34 60%,#13463a);color:#fff;border-radius:20px;padding:30px 32px;margin-top:18px}
-.phero .wm{position:absolute;right:-70px;top:50%;transform:translateY(-50%);width:340px;opacity:.30;pointer-events:none}
-.phero .gd{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--champ);opacity:.65}
-.phero .row{position:relative;z-index:2;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
-.av{width:88px;height:88px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:31px;font-weight:800;color:#1a1a1a;flex-shrink:0;box-shadow:0 0 0 4px rgba(255,255,255,.18)}
-.phero .nm{font-size:26px;font-weight:800}.phero .rl{font-size:13.5px;color:#cfe0d8;margin-top:3px}
-.badge2{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;background:rgba(255,255,255,.14);color:#fff;padding:5px 13px;border-radius:20px;margin-top:11px}.badge2 b{color:#f0d8a8}
-.cvbtn{background:#f0d8a8;color:#1a1a1a;border:0;border-radius:10px;padding:9px 15px;font-size:12.5px;font-weight:800;cursor:pointer;font-family:inherit;margin-top:12px}
+.phero{position:relative;overflow:hidden;background:linear-gradient(125deg,#082420,#0D3B34 58%,#15493c);color:#fff;border-radius:22px;padding:32px 36px 34px;margin-top:18px;box-shadow:0 20px 48px rgba(8,40,35,.28)}
+.phero .wm{position:absolute;right:-50px;top:50%;transform:translateY(-50%);width:300px;opacity:.22;pointer-events:none}
+.phero .glow{position:absolute;right:-30px;top:-45%;width:420px;height:420px;background:radial-gradient(circle,rgba(240,216,168,.20),transparent 62%);pointer-events:none}
+.phero .gd{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--champ);opacity:.6;box-shadow:0 0 9px rgba(214,185,122,.7)}
+.phero .pk{position:relative;z-index:2;display:flex;align-items:center;gap:9px;font-size:10.5px;letter-spacing:2.6px;text-transform:uppercase;color:#f0d8a8;font-weight:800;margin-bottom:17px;padding-bottom:15px;border-bottom:1px solid rgba(240,216,168,.18)}
+.phero .row{position:relative;z-index:2;display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.av{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;color:#1a1a1a;flex-shrink:0;box-shadow:0 0 0 3px rgba(240,216,168,.35),0 0 0 8px rgba(255,255,255,.07)}
+.phero .who{display:flex;flex-direction:column}
+.phero .nm{font-size:28px;font-weight:800;letter-spacing:-.3px;line-height:1.1}
+.phero .rl{font-size:13.5px;color:#cfe0d8;margin-top:5px;display:flex;align-items:center;gap:9px}
+.sepdot{width:4px;height:4px;border-radius:50%;background:#7fa394;display:inline-block}
+.pmeta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;align-items:center}
+.mpill{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;background:rgba(255,255,255,.11);border:1px solid rgba(240,216,168,.24);color:#eaf2ee;padding:6px 14px;border-radius:20px}.mpill b{color:#f0d8a8}.mpill.alt{background:rgba(240,216,168,.13)}
+.cvbtn{background:#f0d8a8;color:#1a1a1a;border:0;border-radius:20px;padding:7px 16px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;transition:.2s}.cvbtn:hover{background:#e6c98a;transform:translateY(-1px)}
 .statcards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
 .scard{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:16px;box-shadow:0 6px 18px rgba(13,59,52,.05)}
 .scard .n{font-size:24px;font-weight:800;color:var(--em)}.scard.gd .n{color:var(--champ2)}.scard .l{font-size:11.5px;color:var(--grey);margin-top:3px}
@@ -85,7 +91,7 @@ body{font-family:'Inter','Sarabun',-apple-system,'Segoe UI',Tahoma,sans-serif;ba
 .recitem:first-of-type{border-top:0}
 .recitem .num{width:26px;height:26px;border-radius:50%;background:var(--champ);color:#1a1a1a;font-weight:800;font-size:12.5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;margin-top:18px}.sec{padding:22px 24px}
-.compass{display:grid;grid-template-columns:290px 1fr;gap:24px;align-items:center}
+.compass{display:grid;grid-template-columns:290px 1fr;gap:24px;align-items:center;margin-top:18px;padding:22px 24px}
 .cwrap{position:relative;height:250px}
 .enring{display:flex;align-items:center;gap:14px;margin:14px 0}
 .cring{width:74px;height:74px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -146,14 +152,32 @@ const RDEN={r:'Ready',d:'Developing',e:'Emerging'};
 const AVBG={'Spa Manager':'#e7c98a','Therapist':'#a9cdbb'};
 const RELMAP={'Legal / Professional Evidence':'ยืนยันสถานะวิชาชีพ / ใบอนุญาต','Wellness Practice Evidence':'ทักษะ wellness เฉพาะทาง','Business / Management Evidence':'ทักษะธุรกิจ / การบริหาร','Learning / Training Evidence':'การเรียนรู้ & พัฒนาทักษะ','Work Experience Evidence':'ประสบการณ์ทำงานจริง','Communication Evidence':'ทักษะการสื่อสาร'};
 const GSHORT={'Required':'เอกสาร','Management':'บริหาร','Massage':'นวด','Spa Treatment':'ทรีตเมนต์','Holistic':'องค์รวม','Training':'อบรม'};
+function IC(n,c,sz){c=c||'#C6A052';sz=sz||16;const a='width="'+sz+'" height="'+sz+'" viewBox="0 0 24 24" fill="none" stroke="'+c+'" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;flex-shrink:0"';
+ const P={
+  compass:'<circle cx="12" cy="12" r="9"/><path d="M15.6 8.4 11 11l-2.6 4.6L13 13z"/>',
+  doc:'<path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/><line x1="9" y1="12.5" x2="15" y2="12.5"/><line x1="9" y1="16" x2="13.5" y2="16"/>',
+  star:'<path d="M12 3.2l2.5 5.1 5.6.8-4.05 3.95.96 5.6L12 16.9 6.99 18.65l.96-5.6L3.9 9.1l5.6-.8z"/>',
+  target:'<circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.8" fill="'+c+'" stroke="none"/>',
+  mic:'<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18.2" x2="12" y2="21"/>',
+  sparkle:'<path d="M12 3v5M12 16v5M3.5 12h5M15.5 12h5"/><path d="M12 8.6l1.1 2.3 2.3 1.1-2.3 1.1L12 15.4l-1.1-2.3L8.6 12l2.3-1.1z" fill="'+c+'" stroke="none"/>',
+  clock:'<circle cx="12" cy="12" r="8.2"/><path d="M12 7.6V12l3 1.8"/>',
+  idea:'<path d="M9.3 18h5.4M10.3 21h3.4M12 3a6 6 0 0 0-3.8 10.6c.6.5 1 1.2 1.05 2.4h5.5c.05-1.2.45-1.9 1.05-2.4A6 6 0 0 0 12 3z"/>',
+  path:'<circle cx="6" cy="6.5" r="2.1"/><circle cx="18" cy="17.5" r="2.1"/><path d="M8.1 6.5h6.4a3.4 3.4 0 0 1 0 6.8H9.5a3.4 3.4 0 0 0 0 6.8"/>',
+  search:'<circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/>',
+  flag:'<line x1="6" y1="21" x2="6" y2="4"/><path d="M6 4h11l-2 3.5L17 11H6z"/>',
+  check:'<circle cx="12" cy="12" r="8.5"/><path d="M8.4 12.2l2.4 2.4 4.8-5"/>'
+ };
+ return '<svg '+a+'>'+(P[n]||P.compass)+'</svg>';}
 let pid=ORDER[0], full=false;
 function initials(n){const p=n.replace(/[().]/g,'').trim().split(' ');return (p[0][0]||'')+(p[1]?p[1][0]:'');}
-function pHero(p){const mgr=p.role==='Spa Manager';const cvbtn=p.hasCV?'<button class="cvbtn" onclick="toggleFull()">'+(full?'▲ ซ่อนโปรไฟล์เต็ม':'📄 ดูโปรไฟล์เต็ม (CV)')+'</button>':'';
- return '<div class="phero"><img class="wm" src="compass.png" alt="">'
-  +'<span class="gd" style="left:38px;top:30px"></span><span class="gd" style="right:120px;bottom:34px"></span><span class="gd" style="left:46%;top:22px"></span>'
+function pHero(p){const cvbtn=p.hasCV?'<button class="cvbtn" onclick="toggleFull()">'+(full?'▲ ซ่อนโปรไฟล์เต็ม':IC('doc','#1a1a1a',14)+' ดูโปรไฟล์เต็ม (CV)')+'</button>':'';
+ return '<div class="phero"><span class="glow"></span><img class="wm" src="compass.png" alt="">'
+  +'<span class="gd" style="left:40px;top:30px"></span><span class="gd" style="right:130px;bottom:34px"></span><span class="gd" style="left:46%;top:22px"></span>'
+  +'<div class="pk">'+IC('compass','#f0d8a8',15)+'<span>Personal Compass · เข็มทิศส่วนตัว</span></div>'
   +'<div class="row"><div class="av" style="background:'+(AVBG[p.role]||'#cdd9d2')+'">'+initials(p.name)+'</div>'
-  +'<div><div class="nm">'+p.name+'</div><div class="rl">'+p.role+' · '+p.org+'</div>'
-  +'<span class="badge2">🧭 English readiness: <b>'+RDLBL[p.ec]+' ('+RDEN[p.ec]+')</b></span> '+cvbtn+'</div></div></div>';}
+  +'<div class="who"><div class="nm">'+p.name+'</div><div class="rl">'+p.role+' <span class="sepdot"></span> '+p.org+'</div>'
+  +'<div class="pmeta"><span class="mpill">'+IC('compass','#f0d8a8',13)+'English readiness · <b>'+RDLBL[p.ec]+' ('+RDEN[p.ec]+')</b></span>'
+   +'<span class="mpill alt">'+IC('path','#f0d8a8',13)+'Trust Pathway · <b>L3</b></span>'+cvbtn+'</div></div></div></div>';}
 function statusCards(p){const mgr=p.role==='Spa Manager';
  return '<div class="statcards">'
  +'<div class="scard"><div class="n" style="font-size:19px">'+RDLBL[p.ec]+'</div><div class="l">English service readiness</div></div>'
@@ -162,16 +186,16 @@ function statusCards(p){const mgr=p.role==='Spa Manager';
  +'<div class="scard gd"><div class="n">'+(mgr?p.team:p.years)+'</div><div class="l">'+(mgr?'ขนาดทีมที่ดูแล':'ประสบการณ์')+'</div></div></div>';}
 function essentialCard(p){const ess=p.evlist.filter(e=>e[6]==='Legal / Professional Evidence');const has=ess.length>0;
  const acc=has?'#C6A052':'#b4453a';
- const head=has?'<b style="color:#0D3B34">✓ มีเอกสารวิชาชีพในระบบ</b>':'<b style="color:#b4453a">⚑ ยังไม่พบเอกสารวิชาชีพ — ต้องติดตาม</b>';
- const items=has?ess.map(e=>'<div style="display:flex;justify-content:space-between;gap:12px;padding:9px 2px;border-bottom:1px solid #f0ebe0;font-size:12.5px"><span style="font-weight:700;color:var(--em2)">'+e[0]+'</span><span style="color:#7a7363;font-size:11.5px">'+(e[2]?e[2]+' · ':'')+e[3]+(e[4]?' · ✓ มีไฟล์':' · ⚑ ไม่มีไฟล์')+'</span></div>').join(''):'<div style="padding:10px 2px;color:#b4453a;font-size:12.5px">ยังไม่มีใบอนุญาต/ใบรับรองวิชาชีพที่ยืนยันได้ในชุดหลักฐานนี้ — ควรขอเพิ่มก่อนนำไปใช้ตัดสินใจ</div>';
- return '<div class="card" style="border-left:4px solid '+acc+(has?'':';background:#fdf4f2')+'"><div class="secH">⭐ Essential Documents · เอกสารจำเป็น</div><div class="secSub">ใบอนุญาต/ใบรับรองวิชาชีพ — เอกสารหลักที่ต้องมีก่อนยืนยันสถานะ · '+head+'</div>'+items+'</div>';}
+ const head=has?'<b style="color:#0D3B34">มีเอกสารวิชาชีพในระบบ</b>':'<b style="color:#b4453a">ยังไม่พบเอกสารวิชาชีพ — ต้องติดตาม</b>';
+ const items=has?ess.map(e=>'<div style="display:flex;justify-content:space-between;gap:12px;padding:9px 2px;border-bottom:1px solid #f0ebe0;font-size:12.5px"><span style="font-weight:700;color:var(--em2)">'+e[0]+'</span><span style="color:#7a7363;font-size:11.5px">'+(e[2]?e[2]+' · ':'')+e[3]+(e[4]?' · '+IC('check','#0D3B34',13)+' มีไฟล์':' · '+IC('flag','#b4453a',13)+' ไม่มีไฟล์')+'</span></div>').join(''):'<div style="padding:10px 2px;color:#b4453a;font-size:12.5px">ยังไม่มีใบอนุญาต/ใบรับรองวิชาชีพที่ยืนยันได้ในชุดหลักฐานนี้ — ควรขอเพิ่มก่อนนำไปใช้ตัดสินใจ</div>';
+ return '<div class="card" style="border-left:4px solid '+acc+';padding:20px 24px;margin-top:18px'+(has?'':';background:#fdf4f2')+'"><div class="secH" style="display:flex;align-items:center;gap:8px">'+IC('star',acc,17)+'Essential Documents · เอกสารจำเป็น</div><div class="secSub">ใบอนุญาต/ใบรับรองวิชาชีพ — เอกสารหลักที่ต้องมีก่อนยืนยันสถานะ · '+head+'</div>'+items+'</div>';}
 function trustPathway(){const st=[['L1','Uploaded','อัปโหลด','done'],['L2','Extracted','AI อ่านข้อมูล','done'],['L3','AI Relevant','จุดที่อยู่ตอนนี้','cur'],['L4','WOW Reviewed','รอการยืนยัน',''],['L5','Source Verified','ต้นสังกัดยืนยัน','']];
- return '<div class="card tpath"><div class="secH">Trust Pathway · เส้นทางความเชื่อมั่นของหลักฐาน</div><div class="secSub">หลักฐานส่วนใหญ่อยู่ที่ขั้น AI Relevant — พร้อมเข้าสู่การทบทวนเพื่อยืนยัน</div>'
+ return '<div class="card tpath"><div class="secH" style="display:flex;align-items:center;gap:8px">'+IC('path',null,17)+'Trust Pathway · เส้นทางความเชื่อมั่นของหลักฐาน</div><div class="secSub">หลักฐานส่วนใหญ่อยู่ที่ขั้น AI Relevant — พร้อมเข้าสู่การทบทวนเพื่อยืนยัน</div>'
   +'<div class="tprow">'+st.map(s=>'<div class="tstep '+s[3]+'"><div class="lv">'+s[0]+'</div><div class="t">'+s[1]+'</div><div class="by">'+s[2]+'</div></div>').join('')+'</div>'
   +'<div class="tpnote">บางรายการ <b>needs confirmation</b> (เช่น ชื่อบนเอกสาร หรือสแกนจาง) จะถูกยืนยันในขั้นการทบทวน ก่อนนำไปใช้ตัดสินใจ</div></div>';}
 function compassCard(p){const enPct=p.ec==='r'?100:p.ec==='d'?66:33;const enCol=p.ec==='r'?'#0D3B34':p.ec==='d'?'#C6A052':'#A7B49A';const cov=new Set(p.skills.map(s=>s[2])).size;
  return '<div class="card compass"><div class="cwrap"><canvas id="cCompass"></canvas></div>'
-  +'<div class="cmeta"><div class="secH">My Skill Evidence · หลักฐานทักษะของฉัน</div><div class="secSub">จำนวนหลักฐานในแต่ละหมวดทักษะ · ครอบคลุม '+cov+'/6 หมวด — กลุ่มที่เป็น 0 เป็นเรื่องปกติตามบทบาท ไม่ใช่จุดอ่อน</div>'
+  +'<div class="cmeta"><div class="secH" style="display:flex;align-items:center;gap:8px">'+IC('target',null,17)+'My Skill Evidence · หลักฐานทักษะของฉัน</div><div class="secSub">จำนวนหลักฐานในแต่ละหมวดทักษะ · ครอบคลุม '+cov+'/6 หมวด — กลุ่มที่เป็น 0 เป็นเรื่องปกติตามบทบาท ไม่ใช่จุดอ่อน</div>'
   +'<div class="enring"><div class="cring" style="background:conic-gradient('+enCol+' '+enPct+'%, #ece5d6 0)"><div class="inner" style="color:'+enCol+'">'+RDLBL[p.ec]+'</div></div>'
     +'<div><div class="rl2">English Service Readiness</div><div class="rs2">ความพร้อมสื่อสารภาษาอังกฤษในงานบริการ (สังเกตจากเสียง)</div></div></div>'
   +'<div class="cdir">'+p.compass.map(c=>'<div class="d">→ '+c+'</div>').join('')+'</div></div></div>';}
@@ -181,18 +205,18 @@ function drawCompass(p){const gc=GORDER.map(g=>p.skills.filter(s=>s[2]===g).leng
 function meters(p){return p.dims.map(d=>{const w=d[2]==='r'?100:d[2]==='d'?66:33;const c=d[2]==='r'?'var(--em)':d[2]==='d'?'var(--champ)':'var(--sage)';
  return '<div class="mrow"><span class="ml">'+d[0]+'</span><div class="mbar"><i style="width:'+w+'%;background:'+c+'"></i></div><span class="mv rd-'+d[2]+'">'+d[1]+'</span></div>';}).join('');}
 function clearShape(p){
- return '<div class="csgrid"><div class="card"><div class="csh cl">✦ สิ่งที่เริ่มชัดเจน · What is becoming clear</div>'+p.strengths.map(s=>'<div class="csitem cl">'+s+'</div>').join('')+'</div>'
-  +'<div class="card"><div class="csh sh">◷ สิ่งที่กำลังก่อร่าง · Still taking shape</div>'+p.growth.map(s=>'<div class="csitem sh">'+s+'</div>').join('')+'</div></div>';}
+ return '<div class="csgrid"><div class="card"><div class="csh cl" style="display:flex;align-items:center;gap:7px">'+IC('sparkle','#0D3B34',16)+'สิ่งที่เริ่มชัดเจน · What is becoming clear</div>'+p.strengths.map(s=>'<div class="csitem cl">'+s+'</div>').join('')+'</div>'
+  +'<div class="card"><div class="csh sh" style="display:flex;align-items:center;gap:7px">'+IC('clock','#b08a3e',16)+'สิ่งที่กำลังก่อร่าง · Still taking shape</div>'+p.growth.map(s=>'<div class="csitem sh">'+s+'</div>').join('')+'</div></div>';}
 function recSteps(p){const items=[p.hrrec].concat(p.needs.map(n=>'เริ่มที่: '+n));
- return '<div class="card rec"><div class="secH">Recommended Next Steps · ก้าวต่อไปที่แนะนำ</div>'+items.map((t,i)=>'<div class="recitem"><div class="num">'+(i+1)+'</div><div>'+t+'</div></div>').join('')+'</div>';}
+ return '<div class="card rec"><div class="secH" style="display:flex;align-items:center;gap:8px">'+IC('idea',null,17)+'Recommended Next Steps · ก้าวต่อไปที่แนะนำ</div>'+items.map((t,i)=>'<div class="recitem"><div class="num">'+(i+1)+'</div><div>'+t+'</div></div>').join('')+'</div>';}
 function evidencePassport(p){
- return '<div class="card passport"><div class="secH">My Evidence Passport</div><div class="secSub">หลักฐานของคุณในรูปการ์ด · แต่ละใบสะท้อนสมรรถนะด้านใด</div>'
+ return '<div class="card passport"><div class="secH" style="display:flex;align-items:center;gap:8px">'+IC('doc',null,17)+'My Evidence Passport</div><div class="secSub">หลักฐานของคุณในรูปการ์ด · แต่ละใบสะท้อนสมรรถนะด้านใด</div>'
   +'<div class="pgrid">'+p.evlist.map(e=>'<div class="pcard"><div class="pt">'+e[0]+'</div><div class="pm">'+e[1]+(e[2]?' · '+e[2]:'')+' · '+e[3]+'</div>'
     +'<span class="reflect">สะท้อน: '+(RELMAP[e[6]]||e[6])+'</span>'
     +'<div class="pf">'+(e[4]?'<span class="ok">✓ มีไฟล์'+(e[5]==='TRUE'?' · สแกนรวม':'')+'</span>':'')+'<span class="tl">AI Relevant</span></div></div>').join('')+'</div></div>';}
 function voiceReveal(p){
- return '<div class="card sec" style="margin-top:18px"><div class="secH">สิ่งที่คำตอบด้วยเสียงบอกเรา · What your answers reveal</div><div class="secSub">แต่ละคำตอบสะท้อนสมรรถนะด้านใด</div>'
-  +'<div class="qgrid">'+p.vins.map((q,i)=>'<div class="qcard"><div class="qq">'+(i+1)+'. '+q[0]+'</div><div class="qm">📘 สะท้อน: '+q[1]+'</div>'+(q[2]?'<div class="qn">🔎 '+q[2]+'</div>':'')+'</div>').join('')+'</div></div>';}
+ return '<div class="card sec" style="margin-top:18px"><div class="secH" style="display:flex;align-items:center;gap:8px">'+IC('mic',null,17)+'สิ่งที่คำตอบด้วยเสียงบอกเรา · What your answers reveal</div><div class="secSub">แต่ละคำตอบสะท้อนสมรรถนะด้านใด</div>'
+  +'<div class="qgrid">'+p.vins.map((q,i)=>'<div class="qcard"><div class="qq">'+(i+1)+'. '+q[0]+'</div><div class="qm" style="display:flex;align-items:flex-start;gap:6px">'+IC('doc','#2f6b54',13)+'<span>สะท้อน: '+q[1]+'</span></div>'+(q[2]?'<div class="qn" style="display:flex;align-items:flex-start;gap:6px">'+IC('search','#7a7363',13)+'<span>'+q[2]+'</span></div>':'')+'</div>').join('')+'</div></div>';}
 function fullProfile(p){
  return '<div class="card fp"><div class="fpH"><div class="t">WOW Professional Profile · ฉบับเต็ม (จาก CV)</div><div class="nm">'+p.name+'</div><div class="rl">'+p.role+' · '+p.org+'</div></div>'
   +'<div class="fpB"><div><div class="fpsec"><div class="h">Professional Summary</div><p>'+p.cvsum+'</p></div>'
@@ -208,8 +232,8 @@ function render(){const p=VIEW[pid];
    +compassCard(p)
    +clearShape(p)
    +recSteps(p)
-   +'<div class="grid"><div class="card sec"><div class="secH">English Service Readiness</div><div class="secSub">ความพร้อมสื่อสารภาษาอังกฤษในงานบริการ (สังเกตจากเสียงตัวอย่าง)</div>'+meters(p)+'<ul class="obs">'+p.para.map(x=>'<li>'+x+'</li>').join('')+'</ul></div>'
-     +'<div class="card sec"><div class="secH">Reflection</div><div class="quote">“'+p.quote+'”</div><div class="goal"><small>สิ่งที่อยากได้จาก WOW Passport</small>'+p.exp+'</div></div></div>'
+   +'<div class="grid"><div class="card sec"><div class="secH" style="display:flex;align-items:center;gap:8px">'+IC('mic',null,17)+'English Service Readiness</div><div class="secSub">ความพร้อมสื่อสารภาษาอังกฤษในงานบริการ (สังเกตจากเสียงตัวอย่าง)</div>'+meters(p)+'<ul class="obs">'+p.para.map(x=>'<li>'+x+'</li>').join('')+'</ul></div>'
+     +'<div class="card sec"><div class="secH" style="display:flex;align-items:center;gap:8px">'+IC('sparkle',null,17)+'Reflection</div><div class="quote">“'+p.quote+'”</div><div class="goal"><small>สิ่งที่อยากได้จาก WOW Passport</small>'+p.exp+'</div></div></div>'
    +voiceReveal(p)
    +evidencePassport(p);
  document.getElementById('profile').innerHTML=html;drawCompass(p);}
