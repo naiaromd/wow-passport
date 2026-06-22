@@ -64,7 +64,7 @@ section{padding:84px 0;scroll-margin-top:64px}
 /* split */
 .split{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}.split.rev{grid-template-columns:.95fr 1.05fr}
 .ph{border-radius:18px;overflow:hidden;box-shadow:0 16px 38px rgba(13,59,52,.16);border:1px solid var(--line)}
-.ph img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:.5s}.ph:hover img{transform:scale(1.04)}
+.ph img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;transition:.5s}.ph:hover img{transform:scale(1.04)}
 .feat{list-style:none;margin:16px 0 22px}
 .feat li{font-size:14.5px;color:var(--ink);padding:7px 0 7px 22px;position:relative;border-top:1px dashed var(--line)}
 .feat li:first-child{border-top:0}.feat li:before{content:'';position:absolute;left:2px;top:15px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
@@ -101,6 +101,36 @@ section{padding:84px 0;scroll-margin-top:64px}
 .vcard .ph2{aspect-ratio:3/2;background-size:cover;background-position:center}
 .vcard .bd{padding:15px 16px 17px;display:flex;flex-direction:column;flex:1}
 .vcard h3{font-size:15px;color:var(--em);font-weight:800}.vcard .role{font-size:10px;letter-spacing:1.1px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:2px}
+/* review-first primary card */
+.vlead{display:grid;grid-template-columns:1.12fr 1fr;gap:0;background:var(--em);border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(13,59,52,.22);margin-bottom:20px}
+.vlead .vtxt{padding:34px 38px;color:#fff;display:flex;flex-direction:column;justify-content:center}
+.vlead .step{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:9px}
+.vlead .step b{background:var(--gold);color:#1a1a1a;border-radius:20px;padding:2px 11px;letter-spacing:1px}
+.vlead h3{font-size:27px;font-weight:800;margin-bottom:10px;color:#fff}
+.vlead p{font-size:14.5px;color:#cfe0d8;line-height:1.65;margin-bottom:22px}
+.vlead .vbtn{align-self:flex-start;background:var(--gold);color:#1a1a1a;font-weight:800;font-size:14.5px;padding:13px 28px;border-radius:12px;text-decoration:none;transition:.2s}.vlead .vbtn:hover{background:var(--gold2);transform:translateY(-2px)}
+.vlead .vimg{background-size:cover;background-position:center;min-height:240px}
+.viewgrid.three{grid-template-columns:repeat(3,1fr)}
+/* snap speak send */
+.sss{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:30px}
+.sstep{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 22px;text-align:center;position:relative;box-shadow:0 8px 22px rgba(13,59,52,.05);transition:.25s}.sstep:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(13,59,52,.12)}
+.sstep .ico{width:64px;height:64px;margin:0 auto 15px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fcf8ef,#efe3c9);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1.5px rgba(198,160,82,.45),0 6px 16px rgba(198,160,82,.18)}
+.sstep .v{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:800}
+.sstep h3{font-size:17px;color:var(--em);margin:3px 0 7px;font-weight:800}.sstep p{font-size:13px;color:var(--mut);line-height:1.55}
+.sstep .ar{position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--gold2);font-size:20px;z-index:3;font-weight:800}
+/* before/after review */
+.ba{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch;margin-top:18px}
+.bacard{border-radius:16px;padding:20px 22px;border:1px solid var(--line)}
+.bacard.before{background:#f6f2ea}.bacard.after{background:var(--em);border-color:var(--em)}
+.bacard .bl{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;margin-bottom:9px}
+.bacard.before .bl{color:#9c7e3e}.bacard.after .bl{color:var(--gold2)}
+.bacard .lvchip{display:inline-block;font-size:11px;font-weight:800;padding:3px 11px;border-radius:20px;margin-bottom:11px}
+.bacard.before .lvchip{background:#e8e0cf;color:#7a6a3e}.bacard.after .lvchip{background:var(--gold);color:#1a1a1a}
+.bacard ul{list-style:none;margin-top:4px}.bacard li{font-size:13px;line-height:1.7;padding-left:16px;position:relative}
+.bacard.before li{color:#5a5346}.bacard.after li{color:#dfeae4}
+.bacard li:before{content:'';position:absolute;left:3px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.baar{display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--gold);font-weight:800}
+@media(max-width:860px){.sss{grid-template-columns:1fr}.sstep .ar{display:none}.vlead{grid-template-columns:1fr}.viewgrid.three{grid-template-columns:1fr 1fr}.ba{grid-template-columns:1fr}.baar{transform:rotate(90deg)}}
 .vcard p{font-size:11.5px;color:var(--mut);line-height:1.5;margin:8px 0 12px;flex:1}
 .vbtn{text-align:center;background:var(--em);color:#fff;text-decoration:none;border-radius:9px;padding:9px;font-size:12px;font-weight:700}.vbtn:hover{background:var(--em2)}
 /* gains + timeline + feedback */
@@ -172,10 +202,11 @@ section{padding:84px 0;scroll-margin-top:64px}
  <div class="kick">02 · Methodology <span class="dot"></span> วิธีการ + Observation</div>
  <h2 class="sec">เก็บอย่างไร และเราสังเกตอะไร</h2>
  <p class="lead">รวบรวมหลักฐาน 3 แหล่งจากบุคลากร 6 ท่าน แล้วจัดระดับความเชื่อมั่นด้วย Trust Pathway</p>
- <div class="cards3" style="margin-bottom:30px">
-  <div class="card"><div class="ic">📄</div><h3>Evidence</h3><p>เอกสาร 25 รายการ — ใบอนุญาต/ใบรับรอง บางส่วนสแกนรวมไฟล์ ใช้ OCR ยืนยันการมีอยู่</p></div>
-  <div class="card"><div class="ic">🎙</div><h3>Voice</h3><p>ตัวอย่างเสียง 6 ราย — แนะนำตัว + ตอบ 4 คำถาม สังเกต 3 มิติ: เข้าใจได้ / ครบถ้วน / ลื่นไหล</p></div>
-  <div class="card"><div class="ic">📝</div><h3>Self-report</h3><p>แบบสอบถาม — ประสบการณ์ ขนาดทีม (เฉพาะ Manager) และเป้าหมายการพัฒนา</p></div>
+ <div class="kick" style="color:var(--gold)">การเก็บหลักฐาน · Snap → Speak → Send</div>
+ <div class="sss" style="margin-bottom:30px">
+  <div class="sstep"><div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C6A052" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2" stroke="#0D3B34"/></svg></div><div class="v">Snap · ถ่าย</div><h3>Evidence — เอกสาร 25</h3><p>ถ่าย/อัปโหลดใบอนุญาต &amp; ใบรับรอง · OCR ยืนยันการมีอยู่ (บางส่วนสแกนรวมไฟล์)</p><span class="ar">→</span></div>
+  <div class="sstep"><div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C6A052" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3" stroke="#0D3B34"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="21"/><line x1="8.5" y1="21" x2="15.5" y2="21"/></svg></div><div class="v">Speak · พูด</div><h3>Voice — เสียง 6 ราย</h3><p>แนะนำตัว + ตอบ 4 คำถาม · สังเกต 3 มิติ: เข้าใจได้ / ครบถ้วน / ลื่นไหล</p><span class="ar">→</span></div>
+  <div class="sstep"><div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C6A052" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4 3 11l6 2.5L21 4z"/><path d="M21 4 11 21l-2-7.5L21 4z" stroke="#0D3B34"/></svg></div><div class="v">Send · ส่ง</div><h3>Self-report — แบบสอบถาม</h3><p>ประสบการณ์ · ขนาดทีม (เฉพาะ Manager) · เป้าหมายการพัฒนา</p></div>
  </div>
  <div class="kick" style="color:var(--gold)">Trust Pathway · เส้นทางความเชื่อมั่น</div>
  <div class="ladder">
@@ -186,6 +217,15 @@ section{padding:84px 0;scroll-margin-top:64px}
   <div class="rung"><div class="lv">L5</div><div class="t">Source Verified</div><div class="by">ต้นสังกัดยืนยัน</div></div>
  </div>
  <p class="lead" style="margin:18px 0 0">Observation: AI ช่วยได้ถึง L3 — ขั้นสูงกว่ารอการยืนยันโดยคน · บางรายการ <b>needs confirmation</b> (ชื่อบนเอกสาร/สแกนจาง) ก่อนนำไปใช้ตัดสินใจ</p>
+ <div class="kick" style="color:var(--gold);margin-top:32px">ตัวอย่าง · ผลเปลี่ยนไปอย่างไรเมื่อมีการรีวิว</div>
+ <div class="ba">
+  <div class="bacard before"><div class="bl">ก่อนรีวิว · AI เท่านั้น</div><span class="lvchip">L3 · AI Relevant</span>
+   <ul><li>ใบรับรองนวดไทย — needs confirmation (สแกนจาง อ่านชื่อไม่ชัด)</li><li>สถานะ: ยังนำไปใช้ตัดสินใจไม่ได้</li><li>ความเชื่อมั่น: ปานกลาง — มาจากเครื่อง</li></ul></div>
+  <div class="baar">→</div>
+  <div class="bacard after"><div class="bl">หลังรีวิว · ผู้ทบทวนยืนยัน</div><span class="lvchip">L4 · WOW Reviewed</span>
+   <ul><li>ยืนยันชื่อตรงกับเจ้าตัว + เลขที่ใบรับรองครบ</li><li>สถานะ: นำไปใช้ตัดสินใจได้</li><li>ความเชื่อมั่น: สูง — คนยืนยัน · พร้อมต่อ L5</li></ul></div>
+ </div>
+ <p class="lead" style="margin:14px 0 0;font-size:14px">การทบทวนโดยคนคือสิ่งที่เลื่อนหลักฐานจาก "เกี่ยวข้อง" → "เชื่อถือได้" — นี่คือคุณค่าหลักของ Review Console</p>
 </div></section>
 
 <!-- 03 RESULT -->
@@ -205,12 +245,16 @@ section{padding:84px 0;scroll-margin-top:64px}
   <div class="fcard"><div class="fn">02</div><h4>จุดแข็งต่างกันตามบทบาท</h4><p>Manager เด่นบริหาร/ผู้นำ · Therapist เด่นงานนวด/เทคนิค — พัฒนาให้ตรงบทบาท</p></div>
   <div class="fcard"><div class="fn">03</div><h4>ตัดสินใจด้วยหลักฐาน</h4><p>Trust Pathway ทำให้เห็นว่าอะไรพร้อม อะไรยัง needs confirmation</p></div>
  </div>
- <div class="kick" style="color:var(--gold)">เปิด Dashboard จริง · 4 มุมมอง</div>
- <div class="viewgrid">
+ <div class="kick" style="color:var(--gold)">เริ่มที่ Review Console — หน้าแรกที่ต้องดู</div>
+ <div class="vlead">
+  <div class="vtxt"><div class="step"><b>เริ่มที่นี่</b> มุมผู้ทบทวน</div><h3>Review Console</h3><p>หน้าแรกที่ควรเปิด — ทบทวนหลักฐานทีละรายการ เลื่อนระดับ Trust Pathway (L3 → L4) ฟังเสียงตัวอย่าง และยืนยันรายการ needs confirmation ก่อนข้อมูลจะไหลไปทุกมุมมอง</p><a class="vbtn" href="review.html">เปิด Review Console →</a></div>
+  <div class="vimg" style="background-image:url(review.jpg)"></div>
+ </div>
+ <div class="kick" style="color:var(--gold);margin-top:8px">จากนั้น · 3 มุมมองผลลัพธ์</div>
+ <div class="viewgrid three">
   <div class="vcard"><div class="ph2" style="background-image:url(individual.jpg)"></div><div class="bd"><h3>Individual</h3><div class="role">มุมพนักงาน</div><p>Personal Compass · จุดแข็ง/จุดพัฒนา · Evidence Passport</p><a class="vbtn" href="individual.html">เปิด →</a></div></div>
-  <div class="vcard"><div class="ph2" style="background-image:url(corporate.jpg)"></div><div class="bd"><h3>Team Compass</h3><div class="role">มุมองค์กร</div><p>ภาพรวมทีม · เทียบสาขา · Evidence by Role</p><a class="vbtn" href="corporate.html">เปิด →</a></div></div>
+  <div class="vcard"><div class="ph2" style="background-image:url(corporate.jpg)"></div><div class="bd"><h3>Team Compass</h3><div class="role">มุมองค์กร</div><p>ภาพรวมทีม · เทียบสาขา · Evidence by Position × Property</p><a class="vbtn" href="corporate.html">เปิด →</a></div></div>
   <div class="vcard"><div class="ph2" style="background-image:url(hr.jpg)"></div><div class="bd"><h3>HR</h3><div class="role">มุมฝ่ายบุคคล</div><p>Training needs · Leadership pipeline · ข้อเสนอแนะ</p><a class="vbtn" href="hr.html">เปิด →</a></div></div>
-  <div class="vcard"><div class="ph2" style="background-image:url(review.jpg)"></div><div class="bd"><h3>Review Console</h3><div class="role">มุมผู้ทบทวน</div><p>ทบทวนหลักฐาน · เลื่อน Trust Pathway · รีวิวเสียง</p><a class="vbtn" href="review.html">เปิด →</a></div></div>
  </div>
 </div></section>
 
@@ -238,7 +282,7 @@ section{padding:84px 0;scroll-margin-top:64px}
  <h2 class="sec" style="max-width:760px;margin:0 auto 10px">พร้อมเดินทางต่อกับ MINOR</h2>
  <p class="lead" style="margin:0 auto 24px;color:#cfe0d8">เปิด Dashboard จริงทั้ง 4 มุมมอง — ข้อมูลจาก pilot รุ่นแรก</p>
  <div class="hbtns" style="justify-content:center">
-  <a class="btn g" href="individual.html">My Compass</a><a class="btn o" href="corporate.html">Team Compass</a><a class="btn o" href="hr.html">HR View</a><a class="btn o" href="review.html">Review Console</a>
+  <a class="btn g" href="review.html">Review Console</a><a class="btn o" href="individual.html">My Compass</a><a class="btn o" href="corporate.html">Team Compass</a><a class="btn o" href="hr.html">HR View</a>
  </div>
  <div class="note">เครื่องมือเชิงพัฒนา (developmental) — แสดง evidence readiness และ learning direction เพื่อการเติบโต ไม่ใช่ข้อสรุปขั้นสุดท้าย หรือการตัดสินเพื่อการจ้างงาน · ข้อมูลจาก Pilot รุ่นแรก มิถุนายน 2026</div>
 </div></section>
