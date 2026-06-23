@@ -131,7 +131,32 @@ section{padding:84px 0;scroll-margin-top:64px}
 .bacard.before li{color:#5a5346}.bacard.after li{color:#dfeae4}
 .bacard li:before{content:'';position:absolute;left:3px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
 .baar{display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--gold);font-weight:800}
-@media(max-width:860px){.sss{grid-template-columns:1fr}.sstep .ar{display:none}.vlead{grid-template-columns:1fr}.viewgrid.three{grid-template-columns:1fr 1fr}.ba{grid-template-columns:1fr}.baar{transform:rotate(90deg)}}
+/* TPQI section */
+.tpqigrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:6px 0 24px}
+.rdcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;box-shadow:0 8px 24px rgba(13,59,52,.06)}
+.rdcard .rdtop{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.rdcard .rdname{font-size:17px;font-weight:800;color:var(--em)}
+.rdcard .rdorg{font-size:12px;color:var(--mut)}
+.rdcard .rdpct{font-size:40px;font-weight:800;line-height:1.1;margin:8px 0 4px}
+.rdcard .rdbar{height:10px;background:#ece6d8;border-radius:6px;overflow:hidden;margin-bottom:12px}
+.rdcard .rdbar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--gold),var(--em))}
+.rdbreak{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:11px}
+.rdbreak span{font-size:11.5px;font-weight:800;padding:4px 11px;border-radius:20px}
+.rdbreak .ok{background:#e2efe6;color:var(--em)}.rdbreak .mid{background:#fbf1dc;color:#9c7e3e}.rdbreak .gap{background:#fbe5e1;color:#b4453a}
+.rdcard .rdnote{font-size:12.5px;color:#4a544d;line-height:1.55}
+.gapcall{display:flex;gap:11px;align-items:flex-start;background:#fbf1dc;border:1px solid #ecdcb4;border-left:4px solid var(--gold);border-radius:12px;padding:14px 18px;margin:4px 0 26px;font-size:13.5px;color:#6b5424;line-height:1.55}
+.gapcall b{color:#9c7e3e}
+.xwwrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;margin-bottom:26px;background:var(--card)}
+.xw{width:100%;border-collapse:collapse;min-width:680px;font-size:13px}
+.xw th{background:var(--em);color:#fff;font-weight:700;font-size:11.5px;text-align:left;padding:11px 14px}
+.xw th.c,.xw td.c{text-align:center}
+.xw td{padding:11px 14px;border-top:1px solid var(--line);color:var(--ink);vertical-align:top}
+.xw td .uc{font-size:10.5px;color:var(--gold);font-weight:800;letter-spacing:.4px}
+.xw td .un{font-size:12.5px;color:var(--em);font-weight:700}
+.xw tr.core td{background:#f6f9f7}
+.xw .pill{display:inline-block;font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px}
+.xw .pok{background:#e2efe6;color:var(--em)}.xw .pmid{background:#fbf1dc;color:#9c7e3e}.xw .pgap{background:#fbe5e1;color:#b4453a}
+@media(max-width:860px){.sss{grid-template-columns:1fr}.sstep .ar{display:none}.vlead{grid-template-columns:1fr}.viewgrid.three{grid-template-columns:1fr 1fr}.ba{grid-template-columns:1fr}.baar{transform:rotate(90deg)}.tpqigrid{grid-template-columns:1fr}}
 .vcard p{font-size:11.5px;color:var(--mut);line-height:1.5;margin:8px 0 12px;flex:1}
 .vbtn{text-align:center;background:var(--em);color:#fff;text-decoration:none;border-radius:9px;padding:9px;font-size:12px;font-weight:700}.vbtn:hover{background:var(--em2)}
 /* gains + timeline + feedback */
@@ -256,6 +281,52 @@ section{padding:84px 0;scroll-margin-top:64px}
   <div class="vcard"><div class="ph2" style="background-image:url(individual.jpg)"></div><div class="bd"><h3>Individual</h3><div class="role">มุมพนักงาน</div><p>Personal Compass · จุดแข็ง/จุดพัฒนา · Evidence Passport</p><a class="vbtn" href="individual.html">เปิด →</a></div></div>
   <div class="vcard"><div class="ph2" style="background-image:url(corporate.jpg)"></div><div class="bd"><h3>Team Compass</h3><div class="role">มุมองค์กร</div><p>ภาพรวมทีม · เทียบสาขา · Evidence by Position × Property</p><a class="vbtn" href="corporate.html">เปิด →</a></div></div>
   <div class="vcard"><div class="ph2" style="background-image:url(hr.jpg)"></div><div class="bd"><h3>HR</h3><div class="role">มุมฝ่ายบุคคล</div><p>Training needs · Leadership pipeline · ข้อเสนอแนะ</p><a class="vbtn" href="hr.html">เปิด →</a></div></div>
+ </div>
+</div></section>
+
+<!-- TPQI ALIGNMENT -->
+<section class="onIv2" id="tpqi"><div class="wrap reveal">
+ <div class="kick" style="color:var(--gold)">Standard Alignment <span class="dot"></span> เทียบมาตรฐานวิชาชีพ</div>
+ <h2 class="sec">ต่อยอดสู่คุณวุฒิวิชาชีพระดับชาติ (TPQI)</h2>
+ <p class="lead">WOW Passport ทำหน้าที่ "ชั้นเตรียมหลักฐาน + ประเมินความพร้อม" ที่ป้อนเข้าระบบ TPQI — ไม่ออกคุณวุฒิเอง แต่ช่วยให้รู้ว่าใครพร้อมยื่นเทียบโอนประสบการณ์ (RPL) และต้องเติมอะไร · นำร่องที่ตำแหน่ง Spa Manager (8 หน่วยสมรรถนะ ระดับ 5–6)</p>
+
+ <div class="kick" style="color:var(--gold)">ความพร้อมเทียบมาตรฐาน · Spa Manager</div>
+ <div class="tpqigrid">
+  <div class="rdcard"><div class="rdtop"><div class="rdname">Kattaleeya</div><div class="rdorg">JW Marriott Phuket</div></div>
+   <div class="rdpct" style="color:var(--em)">75%</div><div class="rdbar"><i style="width:75%"></i></div>
+   <div class="rdbreak"><span class="ok">✓ พร้อม 5</span><span class="mid">~ บางส่วน 2</span><span class="gap">✗ ขาด 1</span></div>
+   <div class="rdnote">หลักฐานเอกสารแน่น (ใบอนุญาต 2 + Train the Trainer + SPA REV MAX + CV) — ใกล้พร้อมยื่นเทียบโอน เหลือเติมการเงินเชิงลึก</div></div>
+  <div class="rdcard"><div class="rdtop"><div class="rdname">Kanda</div><div class="rdorg">Anantara Spa Layan</div></div>
+   <div class="rdpct" style="color:var(--gold)">44%</div><div class="rdbar"><i style="width:44%"></i></div>
+   <div class="rdbreak"><span class="ok">✓ พร้อม 1</span><span class="mid">~ บางส่วน 5</span><span class="gap">✗ ขาด 2</span></div>
+   <div class="rdnote">ประสบการณ์ 10+ ปี แต่หลักฐานส่วนใหญ่มาจากเสียง — ยืนยันใบอนุญาตที่รอตรวจ + แปลงเสียงเป็นเอกสาร + พัฒนาการเงิน</div></div>
+ </div>
+
+ <div class="gapcall">⚑ <span><b>ช่องว่างของระบบ:</b> หน่วย "ความปลอดภัย &amp; สุขอนามัย" (00102) ยังไม่มีหลักฐานเฉพาะของผู้จัดการทั้งสองคน → WOW จะเพิ่มหมวดนี้เข้า evidence checklist ของ Manager เป็นค่าเริ่มต้น (เป็น insight ที่ pilot ช่วยเผยให้เห็น)</span></div>
+
+ <div class="kick" style="color:var(--gold)">Crosswalk · หน่วยสมรรถนะ TPQI ↔ หลักฐาน WOW</div>
+ <div class="xwwrap"><table class="xw">
+  <tr><th>หน่วยสมรรถนะ TPQI</th><th>กลุ่ม</th><th>→ WOW Skill / หลักฐาน</th><th class="c">Kattaleeya</th><th class="c">Kanda</th></tr>
+  <tr class="core"><td><span class="uc">00101</span><br><span class="un">บริการสปาตามคุณลักษณะพึงประสงค์</span></td><td>Core</td><td>Holistic / Service + ประสบการณ์</td><td class="c"><span class="pill pmid">บางส่วน</span></td><td class="c"><span class="pill pmid">บางส่วน</span></td></tr>
+  <tr class="core"><td><span class="uc">00102</span><br><span class="un">ความปลอดภัย &amp; สุขอนามัย</span></td><td>Core</td><td>— ยังไม่มีหมวดตรง</td><td class="c"><span class="pill pgap">ขาด</span></td><td class="c"><span class="pill pgap">ขาด</span></td></tr>
+  <tr class="core"><td><span class="uc">00103</span><br><span class="un">การสื่อสาร &amp; มนุษยสัมพันธ์</span></td><td>Core</td><td>English Service Communication (เสียง)</td><td class="c"><span class="pill pok">พร้อม</span></td><td class="c"><span class="pill pok">พร้อม</span></td></tr>
+  <tr><td><span class="uc">10101</span><br><span class="un">จัดการงานบริการสปา</span></td><td>บริหาร Ops</td><td>Spa Operations (Licensed) · ใบอนุญาต</td><td class="c"><span class="pill pok">พร้อม</span></td><td class="c"><span class="pill pmid">บางส่วน</span></td></tr>
+  <tr><td><span class="uc">10102</span><br><span class="un">จัดการด้านการตลาด</span></td><td>การตลาด</td><td>Revenue &amp; Business Mgmt</td><td class="c"><span class="pill pok">พร้อม</span></td><td class="c"><span class="pill pmid">บางส่วน</span></td></tr>
+  <tr><td><span class="uc">10103</span><br><span class="un">จัดการด้านการเงิน</span></td><td>การเงิน</td><td>Financial / Business Planning</td><td class="c"><span class="pill pmid">บางส่วน</span></td><td class="c"><span class="pill pgap">ขาด</span></td></tr>
+  <tr><td><span class="uc">10104</span><br><span class="un">จัดการด้านบุคลากร (HR)</span></td><td>HR</td><td>Team Leadership &amp; Mentoring</td><td class="c"><span class="pill pok">พร้อม</span></td><td class="c"><span class="pill pmid">บางส่วน</span></td></tr>
+  <tr><td><span class="uc">10105</span><br><span class="un">จัดการการดำเนินงานบริการสปา</span></td><td>บริหาร Ops</td><td>Operational Mastery · Spa Operations</td><td class="c"><span class="pill pok">พร้อม</span></td><td class="c"><span class="pill pmid">บางส่วน</span></td></tr>
+ </table></div>
+
+ <div class="kick" style="color:var(--gold)">เชื่อม WOW → TPQI · 4 ชั้น</div>
+ <div class="cards3" style="margin-bottom:18px">
+  <div class="card"><div class="ic">🏷</div><h3>1 · Map หลักฐาน</h3><p>tag หลักฐานแต่ละชิ้นด้วยรหัสหน่วยสมรรถนะ TPQI (เช่น HDS-WWTT-120B)</p></div>
+  <div class="card"><div class="ic">🪜</div><h3>2 · Trust Pathway</h3><p>L4 (WOW Reviewed) / L5 (Source Verified) = คุณภาพหลักฐานที่ใช้เทียบโอนได้</p></div>
+  <div class="card"><div class="ic">🧭</div><h3>3 · Readiness Map</h3><p>ชี้ว่าใครพร้อมยื่นประเมิน ใครต้องเติมหน่วยไหนก่อน</p></div>
+ </div>
+ <div class="cards3">
+  <div class="card"><div class="ic">🔗</div><h3>4 · เชื่อมระบบชาติ (EWE)</h3><p>export หลักฐานเข้า e-portfolio + ธนาคารหน่วยกิตสมรรถนะดิจิทัลของ TPQI</p></div>
+  <div class="card"><div class="ic">🤝</div><h3>Validate ด้วยองค์กรรับรอง</h3><p>จับมือ Certification Body (หรือผลักดัน TSPA เป็น CB) เพื่อรับรองจริง</p></div>
+  <div class="card"><div class="ic">⚖️</div><h3>ขอบเขต</h3><p>WOW = เตรียมความพร้อม ไม่ใช่การออกคุณวุฒิ — ผู้ออกคุณวุฒิคือ TPQI</p></div>
  </div>
 </div></section>
 
