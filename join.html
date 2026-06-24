@@ -1,0 +1,221 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>WOW Passport — สร้างของคุณ</title>
+<style>
+:root{--em:#0D3B34;--em2:#0a2e28;--gold:#C6A052;--gold2:#d8b97a;--ivory:#F6F2EB;--ink:#2B2B2B;--mut:#6b6354;--line:#E6E0D4;--sage:#A7B49A}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:'Sarabun','Inter',-apple-system,'Segoe UI',Tahoma,sans-serif;background:#e7ddcd;color:var(--ink)}
+.app{max-width:440px;margin:0 auto;min-height:100vh;background:var(--ivory);position:relative;display:flex;flex-direction:column;box-shadow:0 0 40px rgba(0,0,0,.12)}
+.bar{display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--em);color:#fff;position:sticky;top:0;z-index:5}
+.bar img{height:26px}
+.bar .nm{font-weight:800;font-size:15px;letter-spacing:.3px}
+.prog{display:flex;gap:6px;padding:14px 18px 4px}
+.prog i{flex:1;height:5px;border-radius:5px;background:#e0d8c6;transition:.3s}
+.prog i.on{background:var(--gold)}
+.wrap{flex:1;padding:8px 22px 30px;display:flex;flex-direction:column}
+.step{display:none;animation:fade .35s ease}
+.step.on{display:flex;flex-direction:column;flex:1}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.kick{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);font-weight:800;margin:6px 0 8px}
+h1{font-size:25px;font-weight:800;color:var(--em);margin:0 0 8px;line-height:1.25}
+.lead{font-size:14.5px;color:var(--mut);line-height:1.6;margin:0 0 20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px;box-shadow:0 6px 20px rgba(13,59,52,.05);margin-bottom:14px}
+.consent{background:#eef3f0;border:1px solid #d8e4dd;border-radius:14px;padding:15px 16px;margin-bottom:18px}
+.consent h3{margin:0 0 8px;font-size:14px;color:var(--em);display:flex;align-items:center;gap:7px}
+.consent ul{margin:0;padding-left:18px}
+.consent li{font-size:13px;color:#3c473f;line-height:1.7}
+.chk{display:flex;align-items:flex-start;gap:10px;margin-top:14px;font-size:13.5px;color:var(--em2);font-weight:600;cursor:pointer}
+.chk input{width:20px;height:20px;accent-color:var(--em);margin-top:1px;flex-shrink:0}
+.btn{display:block;width:100%;border:0;border-radius:14px;padding:16px;font-size:16px;font-weight:800;font-family:inherit;cursor:pointer;transition:.2s;text-align:center}
+.btn.g{background:var(--gold);color:#1a1a1a}.btn.g:active{transform:scale(.98)}.btn.g:disabled{background:#dcd3c2;color:#9a917e;cursor:not-allowed}
+.btn.o{background:transparent;color:var(--em);border:1.5px solid var(--line);margin-top:10px}
+.sp{flex:1}
+.skip{text-align:center;color:var(--mut);font-size:13.5px;text-decoration:underline;padding:14px;cursor:pointer}
+.snapbox{border:2px dashed var(--gold);border-radius:18px;background:#fbf6ec;padding:30px 18px;text-align:center;cursor:pointer;transition:.2s}
+.snapbox:active{background:#f5edda}
+.snapbox .ic{width:60px;height:60px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:inset 0 0 0 1.5px rgba(198,160,82,.4)}
+.snapbox .t{font-size:15px;font-weight:800;color:var(--em)}
+.snapbox .s{font-size:12.5px;color:var(--mut);margin-top:4px}
+.snapbox.done{border-style:solid;border-color:var(--em);background:#eef3f0}
+.recwrap{text-align:center;padding:14px 0}
+.recbtn{width:104px;height:104px;border-radius:50%;border:0;background:var(--em);color:#fff;margin:0 auto;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 26px rgba(13,59,52,.25);transition:.2s}
+.recbtn.rec{background:#b4453a;animation:pulse 1.2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(180,69,58,.4)}50%{box-shadow:0 0 0 16px rgba(180,69,58,0)}}
+.rectime{font-size:30px;font-weight:800;color:var(--em);margin:14px 0 4px;font-variant-numeric:tabular-nums}
+.recnote{font-size:12.5px;color:var(--mut)}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:13px;font-weight:700;color:var(--em2);margin-bottom:7px}
+.field input,.field select{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;font-size:15px;font-family:inherit;background:#fff;color:var(--ink)}
+.field input:focus,.field select:focus{outline:0;border-color:var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:20px;padding:8px 14px;font-size:13px;font-weight:600;color:#3c473f;cursor:pointer;transition:.15s}
+.chip.on{background:var(--em);color:#fff;border-color:var(--em)}
+/* result */
+.phero{background:linear-gradient(135deg,#0a2e28,#0D3B34 60%,#15493c);border-radius:20px;padding:24px 22px;color:#fff;text-align:center;position:relative;overflow:hidden;margin-bottom:16px}
+.phero .ring{position:absolute;right:-30px;top:-30px;width:140px;opacity:.16}
+.av{width:72px;height:72px;border-radius:50%;background:var(--gold2);color:#1a1a1a;font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 0 0 4px rgba(240,216,168,.3)}
+.phero .nm{font-size:21px;font-weight:800}.phero .rl{font-size:13px;color:#cfe0d8;margin-top:3px}
+.lvtag{display:inline-block;margin-top:12px;background:rgba(240,216,168,.16);border:1px solid rgba(240,216,168,.3);color:#f0d8a8;font-size:12px;font-weight:800;padding:5px 14px;border-radius:20px}
+.meter{margin:8px 0 4px}
+.meter .ml{display:flex;justify-content:space-between;font-size:12.5px;color:#3c473f;font-weight:600;margin-bottom:5px}
+.meter .mb{height:9px;background:#ece6d8;border-radius:6px;overflow:hidden}
+.meter .mb i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--gold),var(--em));transition:.8s}
+.qrbox{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:6px}
+.qr{width:74px;height:74px;flex-shrink:0;border-radius:8px}
+.qrbox .qt{font-size:13px;font-weight:800;color:var(--em)}.qrbox .qs{font-size:11.5px;color:var(--mut);margin-top:3px;line-height:1.5}
+.nextcard{background:#fbf1dc;border:1px solid #ecdcb4;border-left:4px solid var(--gold);border-radius:12px;padding:14px 16px;margin-top:14px;font-size:13px;color:#6b5424;line-height:1.6}
+.foot{font-size:11px;color:#9a917e;text-align:center;padding:14px 22px 24px;line-height:1.6}
+.secnote{font-size:11.5px;color:var(--mut);text-align:center;margin-top:14px;display:flex;align-items:center;justify-content:center;gap:6px}
+</style></head>
+<body><div class="app">
+<div class="bar"><img src="logo_white.png" alt="WOW" onerror="this.style.display='none'"><span class="nm">WOW Passport</span></div>
+<div class="prog"><i id="p0" class="on"></i><i id="p1"></i><i id="p2"></i><i id="p3"></i><i id="p4"></i></div>
+<div class="wrap">
+
+<!-- 0 WELCOME + CONSENT -->
+<div class="step on" id="s0">
+ <div class="kick">WSWC 2026 · Personal Launch</div>
+ <h1>สร้าง WOW Passport<br>ของคุณ — ใน 3 นาที</h1>
+ <p class="lead">สมุดพก + เข็มทิศการเติบโตของคุณเอง · เก็บหลักฐานวิชาชีพ ฟังเสียงตัวเอง และเห็นทิศทางพัฒนาสู่คุณวุฒิวิชาชีพ (TPQI)</p>
+ <div class="consent">
+  <h3>🔒 ข้อมูลนี้เป็นของคุณ</h3>
+  <ul>
+   <li>คุณเลือกเองว่าจะใส่อะไร</li>
+   <li>เห็นได้เฉพาะคุณ และคนที่คุณอนุญาต</li>
+   <li>ลบหรือถอนได้ทุกเมื่อ</li>
+   <li>ที่งานนี้เก็บแค่ข้อมูลเริ่มต้น</li>
+  </ul>
+  <label class="chk"><input type="checkbox" id="agree" onchange="document.getElementById('startBtn').disabled=!this.checked"><span>ฉันยินยอมให้สร้าง Passport ของฉัน และเข้าใจว่าข้อมูลเป็นของฉัน ลบได้ทุกเมื่อ</span></label>
+ </div>
+ <div class="sp"></div>
+ <button class="btn g" id="startBtn" disabled onclick="go(1)">เริ่มเลย · 3 นาที →</button>
+ <div class="secnote">⏱ ใช้เวลาราว 3 นาที · ไม่ต้องโหลดแอป</div>
+</div>
+
+<!-- 1 SNAP -->
+<div class="step" id="s1">
+ <div class="kick">ขั้น 1 / 3 · Snap · ถ่าย</div>
+ <h1>ถ่ายหลักฐานวิชาชีพ 1 ใบ</h1>
+ <p class="lead">ใบอนุญาต / ใบรับรอง / ประกาศนียบัตร — ถ่าย 1 ใบก็พอ หรือข้ามไปเติมทีหลังที่บ้านได้</p>
+ <label class="snapbox" id="snapbox" for="snapfile">
+  <div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#C6A052" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2" stroke="#0D3B34"/></svg></div>
+  <div class="t" id="snaptitle">แตะเพื่อถ่าย / เลือกรูป</div>
+  <div class="s" id="snapsub">รองรับ JPG/PNG · จะตรวจสอบทีหลัง</div>
+ </label>
+ <input type="file" id="snapfile" accept="image/*" capture="environment" style="display:none" onchange="snapped(this)">
+ <div class="sp"></div>
+ <button class="btn g" onclick="go(2)">ถัดไป →</button>
+ <div class="skip" onclick="go(2)">ข้ามไปก่อน — เติมหลักฐานทีหลัง</div>
+</div>
+
+<!-- 2 SPEAK -->
+<div class="step" id="s2">
+ <div class="kick">ขั้น 2 / 3 · Speak · พูด</div>
+ <h1>อัดเสียงแนะนำตัว 30 วิ</h1>
+ <p class="lead">เล่าสั้นๆ ว่าคุณคือใคร ทำงานด้านไหน และอยากพัฒนาอะไร — เสียงช่วยสะท้อนการสื่อสารของคุณ</p>
+ <div class="card">
+  <div class="recwrap">
+   <button class="recbtn" id="recbtn" onclick="toggleRec()">
+    <svg id="recic" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
+   </button>
+   <div class="rectime" id="rectime">0:00</div>
+   <div class="recnote" id="recnote">แตะเพื่อเริ่มอัด</div>
+  </div>
+ </div>
+ <div class="sp"></div>
+ <button class="btn g" onclick="go(3)">ถัดไป →</button>
+ <div class="skip" onclick="go(3)">ข้ามขั้นนี้</div>
+</div>
+
+<!-- 3 SEND -->
+<div class="step" id="s3">
+ <div class="kick">ขั้น 3 / 3 · Send · ส่ง</div>
+ <h1>เล่าเรื่องคุณนิดหน่อย</h1>
+ <div class="field"><label>ชื่อ (หรือชื่อเล่น)</label><input id="fname" placeholder="เช่น Nine" oninput="checkSend()"></div>
+ <div class="field"><label>บทบาท</label>
+  <select id="frole" onchange="checkSend()">
+   <option value="">— เลือก —</option>
+   <option>Spa Manager / ผู้จัดการสปา</option>
+   <option>Spa Therapist / เทอราปิสต์</option>
+   <option>Nuad Thai / ผู้ให้บริการนวดไทย</option>
+   <option>Trainer / ผู้ฝึกสอน</option>
+   <option>Receptionist / ต้อนรับ</option>
+   <option>เจ้าของกิจการ / Owner</option>
+   <option>อื่นๆ</option>
+  </select></div>
+ <div class="field"><label>ประสบการณ์</label>
+  <select id="fexp" onchange="checkSend()">
+   <option value="">— เลือก —</option>
+   <option>น้อยกว่า 1 ปี</option><option>1–3 ปี</option><option>3–5 ปี</option><option>5–8 ปี</option><option>8 ปีขึ้นไป</option>
+  </select></div>
+ <div class="field"><label>อยากพัฒนาเรื่องอะไร (เลือกได้หลายข้อ)</label>
+  <div class="chips" id="goalchips">
+   <span class="chip" onclick="tog(this)">ภาษาอังกฤษ</span><span class="chip" onclick="tog(this)">การเงิน/ธุรกิจ</span>
+   <span class="chip" onclick="tog(this)">ภาวะผู้นำ</span><span class="chip" onclick="tog(this)">เทคนิคนวด</span>
+   <span class="chip" onclick="tog(this)">ทรีตเมนต์</span><span class="chip" onclick="tog(this)">องค์รวม/Holistic</span>
+   <span class="chip" onclick="tog(this)">การตลาด</span>
+  </div></div>
+ <div class="sp"></div>
+ <button class="btn g" id="sendBtn" disabled onclick="finish()">สร้าง Passport ของฉัน ✦</button>
+</div>
+
+<!-- 4 RESULT -->
+<div class="step" id="s4">
+ <div class="kick" style="text-align:center">✦ ยินดีด้วย — Passport ของคุณพร้อมแล้ว</div>
+ <div class="phero"><img class="ring" src="compass.png" alt="" onerror="this.style.display='none'">
+  <div class="av" id="rav">?</div>
+  <div class="nm" id="rnm">—</div><div class="rl" id="rrl">—</div>
+  <div class="lvtag" id="rlv">Trust Level · L1</div>
+ </div>
+ <div class="card">
+  <div style="font-size:13px;font-weight:800;color:var(--em);margin-bottom:12px">ความครบของ Passport เริ่มต้น</div>
+  <div class="meter"><div class="ml"><span>หลักฐาน (Snap)</span><span id="m1l">—</span></div><div class="mb"><i id="m1" style="width:0"></i></div></div>
+  <div class="meter"><div class="ml"><span>เสียง (Speak)</span><span id="m2l">—</span></div><div class="mb"><i id="m2" style="width:0"></i></div></div>
+  <div class="meter"><div class="ml"><span>ข้อมูลตัวเอง (Send)</span><span id="m3l">—</span></div><div class="mb"><i id="m3" style="width:0"></i></div></div>
+  <div class="qrbox"><svg class="qr" id="qr" viewBox="0 0 100 100"></svg><div><div class="qt">QR ส่วนตัวของคุณ</div><div class="qs">เซฟไว้เปิด Passport ของคุณได้ทุกเมื่อ · ส่งเข้าอีเมล/LINE หลังงาน</div></div></div>
+ </div>
+ <div class="nextcard"><b>ขั้นต่อไป (ทำที่บ้าน):</b> เติมใบอนุญาต/ใบรับรองให้ครบ → เลื่อนระดับความน่าเชื่อ (Trust Pathway) → เห็นความพร้อมเทียบมาตรฐาน TPQI + หลักสูตรแนะนำเฉพาะคุณ</div>
+ <button class="btn g" style="margin-top:16px" onclick="alert('เดโม่งาน WSWC — ของจริงจะส่ง Passport เข้าอีเมล/LINE ของคุณ')">ส่ง Passport เข้าอีเมล / LINE</button>
+ <button class="btn o" onclick="restart()">สร้างใบใหม่ (สำหรับสตาฟ)</button>
+ <div class="secnote">🔒 ข้อมูลนี้เป็นของคุณ · ลบได้ทุกเมื่อ</div>
+</div>
+
+</div>
+<div class="foot">WOW Passport · Wise of Wellness — เครื่องมือเชิงพัฒนา ไม่ใช่การออกคุณวุฒิ · เดโม่สำหรับงาน WSWC 2026</div>
+</div>
+<script>
+var st={snap:false,rec:false,recsec:0,goals:[]};var cur=0,timer=null;
+function go(n){document.getElementById('s'+cur).classList.remove('on');cur=n;document.getElementById('s'+n).classList.add('on');
+ for(var i=0;i<5;i++)document.getElementById('p'+i).classList.toggle('on',i<=n);window.scrollTo(0,0);}
+function snapped(inp){if(inp.files&&inp.files[0]){st.snap=true;var b=document.getElementById('snapbox');b.classList.add('done');
+ document.getElementById('snaptitle').textContent='✓ ถ่ายแล้ว — '+(inp.files[0].name.slice(0,22));document.getElementById('snapsub').textContent='จะตรวจสอบหลักฐานในขั้นรีวิว';}}
+function toggleRec(){var b=document.getElementById('recbtn'),ic=document.getElementById('recic'),nt=document.getElementById('recnote');
+ if(!st.rec){st.rec=true;st.recsec=0;b.classList.add('rec');nt.textContent='กำลังอัด… แตะเพื่อหยุด';
+  ic.innerHTML='<rect x="7" y="7" width="10" height="10" rx="2" fill="#fff" stroke="none"/>';
+  timer=setInterval(function(){st.recsec++;var m=Math.floor(st.recsec/60),s=st.recsec%60;document.getElementById('rectime').textContent=m+':'+(s<10?'0':'')+s;if(st.recsec>=30)toggleRec();},1000);
+ }else{st.rec=false;clearInterval(timer);b.classList.remove('rec');nt.textContent=st.recsec>0?('✓ อัดแล้ว '+st.recsec+' วินาที — แตะเพื่ออัดใหม่'):'แตะเพื่อเริ่มอัด';
+  ic.innerHTML='<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="21"/>';}}
+function tog(el){el.classList.toggle('on');var g=el.textContent;var i=st.goals.indexOf(g);if(i<0)st.goals.push(g);else st.goals.splice(i,1);}
+function checkSend(){var ok=document.getElementById('fname').value.trim()&&document.getElementById('frole').value&&document.getElementById('fexp').value;
+ document.getElementById('sendBtn').disabled=!ok;}
+function initials(n){n=n.trim();return n?n[0].toUpperCase():'?';}
+function drawQR(){var s='';var seed=(document.getElementById('fname').value||'WOW').length*7+st.recsec+(st.snap?3:0);
+ for(var y=0;y<7;y++)for(var x=0;x<7;x++){var on=((x*y+x+seed*(y+1))%3===0)||(x<2&&y<2)||(x>4&&y<2)||(x<2&&y>4);
+  if(on)s+='<rect x="'+(x*14+1)+'" y="'+(y*14+1)+'" width="13" height="13" rx="2" fill="#0D3B34"/>';}
+ document.getElementById('qr').innerHTML=s;}
+function finish(){var nm=document.getElementById('fname').value.trim();var rl=document.getElementById('frole').value;
+ document.getElementById('rav').textContent=initials(nm);document.getElementById('rnm').textContent=nm;document.getElementById('rrl').textContent=rl;
+ var done=(st.snap?1:0)+(st.recsec>0?1:0)+1;var lv=done>=3?3:done>=2?2:1;
+ document.getElementById('rlv').textContent='Trust Level · L'+lv+' '+(lv>=3?'· AI Relevant':lv>=2?'· Extracted':'· Uploaded');
+ setM('m1',st.snap,'มีหลักฐาน 1 ใบ','ยังไม่ใส่ — เติมทีหลัง');
+ setM('m2',st.recsec>0,'อัดแล้ว '+st.recsec+' วิ','ข้ามไว้');
+ setM('m3',true,'ครบ','—');
+ drawQR();go(4);}
+function setM(id,ok,yes,no){document.getElementById(id).style.width=ok?'100%':'22%';document.getElementById(id+'l').textContent=ok?yes:no;}
+function restart(){st={snap:false,rec:false,recsec:0,goals:[]};['fname'].forEach(function(i){document.getElementById(i).value='';});
+ document.getElementById('frole').value='';document.getElementById('fexp').value='';document.getElementById('agree').checked=false;document.getElementById('startBtn').disabled=true;
+ document.getElementById('sendBtn').disabled=true;document.getElementById('snapbox').classList.remove('done');document.getElementById('snaptitle').textContent='แตะเพื่อถ่าย / เลือกรูป';
+ document.getElementById('snapsub').textContent='รองรับ JPG/PNG · จะตรวจสอบทีหลัง';document.querySelectorAll('.chip.on').forEach(function(c){c.classList.remove('on')});
+ document.getElementById('rectime').textContent='0:00';document.getElementById('recnote').textContent='แตะเพื่อเริ่มอัด';go(0);}
+</script></body></html>
