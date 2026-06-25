@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>WOW Passport · Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Kanit:wght@300;400;500;600&family=Sarabun:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+ :root{--navy:#0B1F3A;--navy2:#12294a;--ink:#0B1F3A;--line:#e6ebf2;--mut:#6b7b91;--gold:#C8A75A;--em:#0D3B34;--bg:#f4f6fa;--card:#fff;--ok:#1f9d6b;--warn:#c2410c}
+ *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+ body{margin:0;font-family:'Sarabun','Kanit',system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+ h1,h2,h3,.jost{font-family:'Jost','Kanit',sans-serif}
+ .wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+ /* top bar */
+ .top{background:var(--navy);color:#fff;padding:14px 0;position:sticky;top:0;z-index:20;box-shadow:0 2px 14px rgba(11,31,58,.18)}
+ .top .wrap{display:flex;align-items:center;gap:14px}
+ .top img{height:30px;width:auto}
+ .top .ttl{font-family:'Jost','Kanit';font-weight:600;letter-spacing:.5px;font-size:18px}
+ .top .ttl small{display:block;font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:500}
+ .top .sp{flex:1}
+ .btn{font-family:'Jost','Kanit';border:0;border-radius:10px;padding:10px 16px;font-weight:600;cursor:pointer;font-size:14px}
+ .btn-g{background:var(--gold);color:#1a1407}
+ .btn-o{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff}
+ .btn-d{background:var(--navy);color:#fff}
+ .btn:active{transform:translateY(1px)}
+ /* login */
+ .login{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#0B1F3A,#143057)}
+ .lcard{background:#fff;border-radius:18px;padding:34px 30px;width:min(380px,92vw);box-shadow:0 24px 60px rgba(0,0,0,.35);text-align:center}
+ .lcard img{height:54px;margin-bottom:10px}
+ .lcard h2{margin:.2em 0 .1em;font-size:21px;color:var(--navy)}
+ .lcard p{margin:0 0 20px;color:var(--mut);font-size:13px}
+ .fld{text-align:left;margin-bottom:14px}
+ .fld label{display:block;font-size:12px;color:var(--mut);margin-bottom:5px;font-weight:500}
+ .fld input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px;font-family:inherit}
+ .fld input:focus{outline:none;border-color:var(--gold)}
+ .login .btn-g{width:100%;padding:13px;margin-top:4px}
+ .err{color:#c0392b;font-size:13px;margin-top:12px;min-height:18px}
+ /* dash */
+ .dash{display:none;padding:22px 0 60px}
+ .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:6px 0 20px}
+ .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+ .stat .n{font-family:'Jost';font-size:30px;font-weight:700;color:var(--navy);line-height:1}
+ .stat .l{font-size:12px;color:var(--mut);margin-top:6px;letter-spacing:.3px}
+ .bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+ .bar input{flex:1;min-width:200px;padding:11px 14px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-family:inherit}
+ .cnt{color:var(--mut);font-size:13px}
+ .tablewrap{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+ table{width:100%;border-collapse:collapse;font-size:14px}
+ th{background:#f7f9fc;text-align:left;padding:12px 14px;font-family:'Jost','Kanit';font-weight:600;color:var(--navy);font-size:12.5px;letter-spacing:.3px;border-bottom:1px solid var(--line);white-space:nowrap}
+ td{padding:12px 14px;border-bottom:1px solid #f0f3f8;vertical-align:top}
+ tr:last-child td{border-bottom:0}
+ tr.row{cursor:pointer}
+ tr.row:hover{background:#fafbfe}
+ .nm{font-weight:600;color:var(--navy)}
+ .chip{display:inline-block;background:#eef2f8;color:#445;border-radius:20px;padding:2px 10px;font-size:12px;margin:2px 3px 2px 0}
+ .chip.src{background:#f3ecda;color:#7a5e1e}
+ .lvl{font-family:'Jost';font-weight:700;font-size:12px;color:#fff;background:var(--gold);border-radius:6px;padding:2px 8px}
+ .ev{background:#fafbfe}
+ .ev td{padding:0}
+ .evin{padding:14px 18px;display:flex;flex-wrap:wrap;gap:14px}
+ .evcard{border:1px solid var(--line);border-radius:10px;padding:10px;background:#fff;width:200px}
+ .evcard .k{font-family:'Jost';font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);font-weight:600}
+ .evcard img{width:100%;height:120px;object-fit:cover;border-radius:7px;margin-top:6px;background:#eef}
+ .evcard audio{width:100%;margin-top:8px}
+ .evcard a{font-size:12px;color:#2563a8;word-break:break-all}
+ .muted{color:var(--mut);font-size:13px}
+ .empty{padding:40px;text-align:center;color:var(--mut)}
+ .loadr{padding:40px;text-align:center;color:var(--mut)}
+ @media(max-width:680px){
+  .hideS{display:none}
+  td,th{padding:10px}
+ }
+</style>
+</head>
+<body>
+
+<!-- ===== LOGIN ===== -->
+<div id="login" class="login">
+ <form class="lcard" onsubmit="doLogin(event)">
+  <img src="logo_mark.png" alt="WOW" onerror="this.style.display='none'">
+  <h2 class="jost">WOW Passport</h2>
+  <p>ระบบหลังบ้าน · สำหรับผู้ดูแลเท่านั้น</p>
+  <div class="fld"><label>อีเมลแอดมิน</label><input id="email" type="email" autocomplete="username" required></div>
+  <div class="fld"><label>รหัสผ่าน</label><input id="pass" type="password" autocomplete="current-password" required></div>
+  <button class="btn btn-g jost" id="loginBtn" type="submit">เข้าสู่ระบบ</button>
+  <div class="err" id="lerr"></div>
+ </form>
+</div>
+
+<!-- ===== DASHBOARD ===== -->
+<div id="dash" class="dash">
+ <div class="top"><div class="wrap">
+   <img src="logo_white.png" alt="WOW" onerror="this.style.display='none'">
+   <div class="ttl jost">WOW Passport <small>ADMIN CONSOLE</small></div>
+   <div class="sp"></div>
+   <button class="btn btn-o jost hideS" onclick="loadAll()">รีเฟรช</button>
+   <button class="btn btn-o jost" onclick="exportCSV()">Export CSV</button>
+   <button class="btn btn-o jost" onclick="doLogout()">ออกจากระบบ</button>
+ </div></div>
+
+ <div class="wrap">
+   <div class="stats" id="stats"></div>
+   <div class="bar">
+     <input id="q" type="search" placeholder="ค้นหา ชื่อ / บทบาท / อีเมล / เบอร์…" oninput="render()">
+     <span class="cnt" id="cnt"></span>
+   </div>
+   <div class="tablewrap">
+     <table>
+       <thead><tr>
+         <th>ชื่อ</th><th>บทบาท</th><th class="hideS">เป้าหมาย</th>
+         <th class="hideS">ติดต่อ</th><th>หลักฐาน</th><th>ที่มา</th><th class="hideS">เวลา</th>
+       </tr></thead>
+       <tbody id="tbody"><tr><td colspan="7" class="loadr">กำลังโหลด…</td></tr></tbody>
+     </table>
+   </div>
+ </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+var SB_URL='https://xwzrlviyuukfxujpbkni.supabase.co';
+var SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh3enJsdml5dXVrZnh1anBia25pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIzNTIyNjMsImV4cCI6MjA5NzkyODI2M30.WheL9Jx6jYtZLUqAobM7MfptuZGk17URY5vps7aUS7w';
+var SB=window.supabase.createClient(SB_URL,SB_KEY);
+var PROFILES=[],EVID={},EXPANDED={};
+
+function esc(x){return String(x==null?'':x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+async function doLogin(e){
+ e.preventDefault();
+ var btn=document.getElementById('loginBtn');btn.disabled=true;btn.textContent='กำลังเข้า…';
+ document.getElementById('lerr').textContent='';
+ var email=document.getElementById('email').value.trim();
+ var pass=document.getElementById('pass').value;
+ var r=await SB.auth.signInWithPassword({email:email,password:pass});
+ btn.disabled=false;btn.textContent='เข้าสู่ระบบ';
+ if(r.error){document.getElementById('lerr').textContent='เข้าไม่ได้: '+r.error.message;return;}
+ showDash();
+}
+function doLogout(){SB.auth.signOut().then(function(){location.reload();});}
+
+function showDash(){
+ document.getElementById('login').style.display='none';
+ document.getElementById('dash').style.display='block';
+ loadAll();
+}
+
+async function loadAll(){
+ document.getElementById('tbody').innerHTML='<tr><td colspan="7" class="loadr">กำลังโหลด…</td></tr>';
+ var p=await SB.from('profiles').select('*').order('created_at',{ascending:false});
+ if(p.error){
+   document.getElementById('tbody').innerHTML='<tr><td colspan="7" class="empty">โหลดข้อมูลไม่ได้: '+esc(p.error.message)+'<br><span class="muted">ตรวจว่าอีเมลนี้อยู่ในตาราง admins และรัน WOW_Supabase_Admin.sql แล้ว</span></td></tr>';
+   return;
+ }
+ PROFILES=p.data||[];
+ var ev=await SB.from('evidence').select('*');
+ EVID={};
+ (ev.data||[]).forEach(function(e){(EVID[e.profile_id]=EVID[e.profile_id]||[]).push(e);});
+ renderStats();render();
+}
+
+function renderStats(){
+ var totEv=0,bySrc={};
+ PROFILES.forEach(function(p){bySrc[p.source||'-']=(bySrc[p.source||'-']||0)+1;});
+ Object.keys(EVID).forEach(function(k){totEv+=EVID[k].length;});
+ var srcTxt=Object.keys(bySrc).map(function(k){return k+': '+bySrc[k];}).join(' · ')||'—';
+ document.getElementById('stats').innerHTML=
+   stat(PROFILES.length,'ผู้ลงทะเบียนทั้งหมด')+
+   stat(totEv,'หลักฐาน (รูป/เสียง)')+
+   stat(Object.keys(bySrc).length,'ช่องทางที่มา')+
+   '<div class="stat"><div class="n" style="font-size:15px;line-height:1.4;padding-top:4px">'+esc(srcTxt)+'</div><div class="l">แยกตามที่มา</div></div>';
+}
+function stat(n,l){return '<div class="stat"><div class="n">'+n+'</div><div class="l">'+l+'</div></div>';}
+
+function render(){
+ var q=(document.getElementById('q').value||'').toLowerCase().trim();
+ var rows=PROFILES.filter(function(p){
+   if(!q)return true;
+   return [(p.name||''),(p.role||''),(p.email||''),(p.phone||''),(p.line_id||''),(p.experience||'')].join(' ').toLowerCase().indexOf(q)>=0;
+ });
+ document.getElementById('cnt').textContent=rows.length+' / '+PROFILES.length+' คน';
+ if(!rows.length){document.getElementById('tbody').innerHTML='<tr><td colspan="7" class="empty">ยังไม่มีข้อมูล</td></tr>';return;}
+ var h='';
+ rows.forEach(function(p){
+   var evs=EVID[p.id]||[];
+   var goals=(p.goals||[]).map(function(g){return '<span class="chip">'+esc(g)+'</span>';}).join('');
+   var contact=[p.email?('✉ '+esc(p.email)):'',p.phone?('☎ '+esc(p.phone)):'',p.line_id?('LINE '+esc(p.line_id)):''].filter(Boolean).join('<br>')||'<span class="muted">—</span>';
+   var dt=p.created_at?new Date(p.created_at).toLocaleString('th-TH',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}):'';
+   h+='<tr class="row" onclick="toggle(\''+p.id+'\')">'+
+      '<td><span class="nm">'+esc(p.name||'(ไม่ระบุ)')+'</span></td>'+
+      '<td>'+esc(p.role||'—')+'<div class="muted hideS">'+esc((p.experience||'').slice(0,40))+'</div></td>'+
+      '<td class="hideS">'+(goals||'<span class="muted">—</span>')+'</td>'+
+      '<td class="hideS">'+contact+'</td>'+
+      '<td>'+(evs.length?('<span class="lvl">'+evs.length+' ไฟล์</span>'):'<span class="muted">—</span>')+'</td>'+
+      '<td><span class="chip src">'+esc(p.source||'-')+'</span></td>'+
+      '<td class="hideS muted">'+esc(dt)+'</td></tr>';
+   if(EXPANDED[p.id]){
+     h+='<tr class="ev"><td colspan="7"><div class="evin" id="ev_'+p.id+'">'+(evs.length?'<span class="muted">กำลังโหลดไฟล์…</span>':'<span class="muted">ไม่มีหลักฐานแนบ</span>')+'</div></td></tr>';
+   }
+ });
+ document.getElementById('tbody').innerHTML=h;
+ // load signed urls for expanded rows
+ rows.forEach(function(p){if(EXPANDED[p.id])fillEvidence(p.id);});
+}
+
+function toggle(id){EXPANDED[id]=!EXPANDED[id];render();}
+
+async function fillEvidence(pid){
+ var box=document.getElementById('ev_'+pid);if(!box)return;
+ var evs=EVID[pid]||[];if(!evs.length)return;
+ var parts=[];
+ for(var i=0;i<evs.length;i++){
+   var e=evs[i];
+   var bucket=(e.kind==='voice')?'voice':'evidence';
+   var url=null;
+   try{var s=await SB.storage.from(bucket).createSignedUrl(e.file_url,3600);if(!s.error)url=s.signedUrl;}catch(_){}
+   var inner='<div class="k">'+esc(e.kind||'file')+'</div>';
+   if(e.kind==='voice'){inner+= url?('<audio controls src="'+url+'"></audio>'):'<div class="muted">เปิดไฟล์เสียงไม่ได้</div>';}
+   else if(url){inner+='<img src="'+url+'" alt=""><a href="'+url+'" target="_blank">เปิดเต็ม</a>';}
+   else{inner+='<div class="muted">เปิดไฟล์ไม่ได้</div>';}
+   if(e.note)inner+='<div class="muted">'+esc(e.note)+'</div>';
+   parts.push('<div class="evcard">'+inner+'</div>');
+ }
+ box.innerHTML=parts.join('');
+}
+
+function exportCSV(){
+ var cols=['name','role','experience','goals','email','line_id','phone','source','created_at'];
+ var lines=[cols.join(',')];
+ PROFILES.forEach(function(p){
+   lines.push(cols.map(function(c){
+     var v=p[c];if(Array.isArray(v))v=v.join('; ');
+     v=(v==null?'':String(v)).replace(/"/g,'""');
+     return '"'+v+'"';
+   }).join(','));
+ });
+ var blob=new Blob(['﻿'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});
+ var a=document.createElement('a');a.href=URL.createObjectURL(blob);
+ a.download='wow_passport_'+new Date().toISOString().slice(0,10)+'.csv';a.click();
+}
+
+// restore session
+SB.auth.getSession().then(function(r){if(r.data&&r.data.session)showDash();});
+</script>
+</body>
+</html>
