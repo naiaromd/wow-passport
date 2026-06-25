@@ -274,10 +274,13 @@ function finish(){var nm=document.getElementById('fname').value.trim();var rl=do
 function normPhone(v){v=String(v||'').replace(/[^0-9]/g,'');if(v.indexOf('66')===0&&v.length>=11)v='0'+v.slice(2);return v;}
 
 // ---- บันทึกข้อมูลจริงเข้า Supabase (เงียบ ๆ ไม่บล็อก UI ถ้าพลาด) ----
+function uuidv4(){if(window.crypto&&crypto.randomUUID)return crypto.randomUUID();return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){var r=Math.random()*16|0,v=c==='x'?r:(r&0x3|0x8);return v.toString(16);});}
 function saveToSupabase(){
  if(!SB){return;}
  var nm=(document.getElementById('fname')||{}).value||'';
+ var pid=uuidv4();              // สร้าง id ฝั่ง client -> ไม่ต้องอ่านกลับ (เลี่ยงชน RLS)
  var prof={
+   id:pid,
    name:nm.trim(),
    role:(document.getElementById('frole')||{}).value||'',
    experience:(document.getElementById('fexp')||{}).value||'',
@@ -288,9 +291,8 @@ function saveToSupabase(){
    consent:true,
    source:'wswc2026'
  };
- SB.from('profiles').insert(prof).select('id').single().then(function(res){
-   if(res.error||!res.data){console.warn('SB profile',res.error);return;}
-   var pid=res.data.id;
+ SB.from('profiles').insert(prof).then(function(res){
+   if(res.error){console.warn('SB profile',res.error);return;}
    if(st.snapFile){
      var ext=(st.snapFile.name.split('.').pop()||'jpg').toLowerCase();
      var p1=pid+'/snap_'+Date.now()+'.'+ext;
