@@ -211,12 +211,16 @@ h1{font-family:'Kanit','Jost',sans-serif;font-weight:500}
 </div>
 <div class="foot">WOW Passport · Wise of Wellness — เครื่องมือบันทึกและพัฒนาเชิงวิชาชีพ · เดโมงาน WSWC 2026</div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+var SB_URL='https://xwzrlviyuukfxujpbkni.supabase.co';
+var SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh3enJsdml5dXVrZnh1anBia25pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIzNTIyNjMsImV4cCI6MjA5NzkyODI2M30.WheL9Jx6jYtZLUqAobM7MfptuZGk17URY5vps7aUS7w';
+var SB=(window.supabase&&window.supabase.createClient)?window.supabase.createClient(SB_URL,SB_KEY):null;
 var st={snap:false,rec:false,recsec:0,goals:[]};var cur=0,timer=null;
 function go(n){document.getElementById('s'+cur).classList.remove('on');cur=n;document.getElementById('s'+n).classList.add('on');
  for(var i=0;i<5;i++)document.getElementById('p'+i).classList.toggle('on',i<=n);document.getElementById('backBtn').style.display=(n>=1&&n<=3)?'flex':'none';window.scrollTo(0,0);}
 function goBack(){if(cur>=1&&cur<=3)go(cur-1);}
-function snapped(inp){if(inp.files&&inp.files[0]){var file=inp.files[0];st.snap=true;st.snapName=file.name;var b=document.getElementById('snapbox');b.classList.add('done');
+function snapped(inp){if(inp.files&&inp.files[0]){var file=inp.files[0];st.snap=true;st.snapName=file.name;st.snapFile=file;var b=document.getElementById('snapbox');b.classList.add('done');
  document.getElementById('snaptitle').textContent='✓ เพิ่มหลักฐานแล้ว';document.getElementById('snapsub').textContent=file.name.slice(0,28)+' · แตะเพื่อเปลี่ยนรูป';
  var pv=document.getElementById('snapprev');try{pv.src=URL.createObjectURL(file);pv.style.display='block';}catch(e){}}}
 var mediaRec=null,chunks=[],micStream=null,demoMode=false;
@@ -265,7 +269,43 @@ function finish(){var nm=document.getElementById('fname').value.trim();var rl=do
  setM('m2',st.recsec>0,'อัดแล้ว '+st.recsec+' วิ','ข้ามไว้');
  setM('m3',true,'ครบ','—');
  try{localStorage.setItem('wow_profile',JSON.stringify({name:nm,role:rl,email:(document.getElementById('femail')||{}).value||'',line:(document.getElementById('fline')||{}).value||'',exp:document.getElementById('fexp').value}));}catch(e){}
+ try{saveToSupabase();}catch(e){}
  drawQR();go(4);}
+
+// ---- บันทึกข้อมูลจริงเข้า Supabase (เงียบ ๆ ไม่บล็อก UI ถ้าพลาด) ----
+function saveToSupabase(){
+ if(!SB){return;}
+ var nm=(document.getElementById('fname')||{}).value||'';
+ var prof={
+   name:nm.trim(),
+   role:(document.getElementById('frole')||{}).value||'',
+   experience:(document.getElementById('fexp')||{}).value||'',
+   goals:st.goals||[],
+   email:(document.getElementById('femail')||{}).value||'',
+   line_id:(document.getElementById('fline')||{}).value||'',
+   consent:true,
+   source:'wswc2026'
+ };
+ SB.from('profiles').insert(prof).select('id').single().then(function(res){
+   if(res.error||!res.data){console.warn('SB profile',res.error);return;}
+   var pid=res.data.id;
+   if(st.snapFile){
+     var ext=(st.snapFile.name.split('.').pop()||'jpg').toLowerCase();
+     var p1=pid+'/snap_'+Date.now()+'.'+ext;
+     SB.storage.from('evidence').upload(p1,st.snapFile,{upsert:true}).then(function(u){
+       if(!u.error){SB.from('evidence').insert({profile_id:pid,kind:'snap',file_url:p1,file_name:st.snapFile.name});}
+       else console.warn('SB snap',u.error);
+     });
+   }
+   if(st.audioBlob){
+     var p2=pid+'/voice_'+Date.now()+'.webm';
+     SB.storage.from('voice').upload(p2,st.audioBlob,{upsert:true,contentType:'audio/webm'}).then(function(u){
+       if(!u.error){SB.from('evidence').insert({profile_id:pid,kind:'voice',file_url:p2,file_name:'voice.webm'});}
+       else console.warn('SB voice',u.error);
+     });
+   }
+ });
+}
 function setM(id,ok,yes,no){document.getElementById(id).style.width=ok?'100%':'22%';document.getElementById(id+'l').textContent=ok?yes:no;}
 function restart(){try{localStorage.removeItem('wow_profile');}catch(e){}location.reload();}
 
